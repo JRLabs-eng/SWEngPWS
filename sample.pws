@@ -1,6 +1,8 @@
-
-<?xml bl alb>
-<Presentation italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman">
+<?xml version="1.0"?>
+<Presentation
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schema.xsd"
+	italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman" >
 <Meta key="author" value="Stuart Porter" />
 <Slide italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman" duration="12" start="wait">
 	<Text id="something" italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman">
@@ -11,14 +13,3 @@
 	<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="#38234" fill="gradient(#38AEDE,#3482ED[,linear])" />
 </Slide>
 </Presentation>
-
-
-formats
-
-	- audio: wav
-	- image: jpg
-	- video: mp4
-
-color:   #22AE93
-
-font:	
