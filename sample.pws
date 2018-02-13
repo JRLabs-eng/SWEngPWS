@@ -5,9 +5,9 @@
 	textsize="12" color="#F341DE" font="Times New Roman">
 <Meta key="author" value="Stuart Porter" />
 	<Slide fill="#023211" color="#F341DE" duration="20">
-		<Text bold underline textsize="10" duration="12" start="trigger">
+		<Text bold="true" underline="true" textsize="10" duration="12" start="trigger">
 			Some text on one line<br />
-			<Format italic bold underline textsize="12" color="#F341DE" font="Helvetica">Some</Format> text<br />
+			<Format italic="true" bold="false" textsize="12" color="#F341DE" font="Helvetica">Some</Format> text<br />
 			<br />
 			Some more text
 		</Text>
