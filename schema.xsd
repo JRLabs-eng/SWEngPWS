@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema version="1.0">
+<schema
+	version="1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
 	<attributeGroup name="position">
 		<attribute name="x" type="int" />
 		<attribute name="y" type="int" />
