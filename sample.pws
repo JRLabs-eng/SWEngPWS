@@ -2,14 +2,42 @@
 <Presentation
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="schema.xsd"
-	italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman" >
-<Meta key="author" value="Stuart Porter" />
-<Slide italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman" duration="12" start="wait">
-	<Text id="something" italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman">
-		<Format italic bold underline textsize="12" textcolor="#F341DE" font="Times New Roman">Some</Format> text<br />
-		<br />
-		Some more text
-	</Text>
-	<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="#38234" fill="gradient(#38AEDE,#3482ED[,linear])" />
-</Slide>
+	italic="false" bold="false" underline="false" textsize="12" textcolor="#F341DE" font="Times New Roman" >
+
+	<Meta key="author" value="Stuart Porter"/>
+
+	<Slide duration="12">
+		<Text id="header" textsize="18" underline="true" font="Times New Roman">
+			This is the schema of the
+			<Format bold="true" textcolor="#F341DE">PWS</Format>
+			file fromat agreed between
+			<Format bold="true" textcolor="#F341DE">SWEng</Format>
+			groups.
+		</Text>
+		<Text id="body">
+			Text can contain <Format font="comic sans">Format</Format> tags that change how it is <Format italic="true">rendered</Format>.
+			<br/>
+			This slide is an example of that.
+		</Text>
+	</Slide>
+
+	<Slide duration="12">
+		<Text id="something" underline="true" textsize="18" textcolor="#F341DE" font="Times New Roman">
+			The Schema also defines <Format underline="false" textsize="24">Shapes</Format>!
+		</Text>
+		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED[,linear])" />
+		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED[,linear])" />
+		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="#38234"/>
+		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="#38234"/>
+
+	</Slide>
+
+	<Slide duration="12">
+		<Text id="something" italic="false" bold="false" underline="true" textsize="12" textcolor="#F341DE" font="Times New Roman">
+			<Format textsize="12" textcolor="#F341DE" font="Times New Roman">Some</Format> text<br/>
+			<br/>
+			Some more text
+		</Text>
+		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="#38234"/>
+	</Slide>
 </Presentation>

@@ -1,231 +1,142 @@
-<?xml version="1.0"?>
-<schema version="1.0">
-    <element name="slideshow">
-        <annotation>
-            <info>
-                Note: i) All coordinates represent the top-left corner of the object in question. ii) All URL's (typically 'urlname') are absolute or relative to current URL. iii) All color's are represented by a string of the form '#ffffff' where each pair of characters after the hash are the hexadecimal representation of red, green, blue respectively.
-            </info>
-        </annotation>
-        <type>
-            <element name="documentinfo">
-                <annotation>
-                    <info>
-                        Information on the current document, e.g., author, version
-                    </info>
-                </annotation>
-                <type>
-                    <element name="author" type="string"/>
-                    <element name="version" type="string"/>
-                    <element name="comment" type="string"/>
-                </type>
-            </element>
-            <element name="defaults">
-                <annotation>
-                    <info>
-                        Default look and feel for slides - these elements should be applied by default to all slides.
-                    </info>
-                </annotation>
-                <type>
-                    <element name="backgroundcolor" type="string"/>
-                    <element name="font" type="string"/>
-                    <element name="fontsize" type="string"/>
-                    <element name="fontcolor" type="string"/>
-                    <element name="linecolor" type="string"/>
-                    <element name="fillcolor" type="string"/>
-                </type>
-            </element>
-            <element name="slide">
-                <annotation>
-                    <info>
-                        Individual slide
-                    </info>
-                </annotation>
-                <type>
-                    <attribute name="id" type="string">
-                        <annotation>
-                            <info>
-                                ID for this slide - could be used to leap around slideshow.
-                            </info>
-                        </annotation>
-                    </attribute>
-                    <attribute name="duration" type="int">
-                        <annotation>
-                            <type>
-                                Period (in secs) for which this slide should be displayed.
-                            </type>
-                        </annotation>
-                    </attribute>
-                    <element name="text" type="string">
-                        <annotation>
-                            <info>
-                                Text to be displayed
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="font" type="string"/>
-                            <attribute name="fontsize" type="string"/>
-                            <attribute name="fontcolor" type="string"/>
-                            <attribute name="xstart" type="int"/>
-                            <attribute name="ystart" type="int"/>
-                            <attribute name="starttime" type="int"/>
-                            <attribute name="endtime" type="int"/>
-                            <element name="b" type="string">
-                                <annotation>
-                                    <info>
-                                        Encapsulates bold text
-                                    </info>
-                                </annotation>
-                            </element>
-                            <element name="i" type="string">
-                                <annotation>
-                                    <info>
-                                        Encapsulates italicised text
-                                    </info>
-                                </annotation>
-                            </element>
-                        </type>
-                    </element>
-                    <element name="line">
-                        <annotation>
-                            <info>
-                                Line to be displayed.
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="xstart" type="int"/>
-                            <attribute name="ystart" type="int"/>
-                            <attribute name="xend" type="int"/>
-                            <attribute name="yend" type="int"/>
-                            <attribute name="linecolor" type="string"/>
-                            <attribute name="starttime" type="int"/>
-                            <attribute name="endtime" type="int"/>
-                        </type>
-                    </element>
-                    <element name="shape">
-                        <annotation>
-                            <info>
-                                Shape to be displayed.
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="type" type="'oval'|'rectangle'"/>
-                            <attribute name="xstart" type="int"/>
-                            <attribute name="ystart" type="int"/>
-                            <attribute name="width" type="int"/>
-                            <attribute name="height" type="int"/>
-                            <attribute name="fillcolor" type="string"/>
-                            <attribute name="starttime" type="int"/>
-                            <attribute name="endtime" type="int"/>
-                            <element name="shading">
-                                <annotation>
-                                    <info>
-                                        If present, specifices a gradient fill. Parameters are as described in java.awt.GradientPaint
-                                    </info>
-                                </annotation>
-                                <type>
-                                    <attribute name="x1" type="int"/>
-                                    <attribute name="y1" type="int"/>
-                                    <attribute name="color1" type="string"/>
-                                    <attribute name="x2" type="int"/>
-                                    <attribute name="y2" type="int"/>
-                                    <attribute name="color2" type="string"/>
-                                    <attribute name="cyclic" type="'true'|'false'"/>
-                                </type>
-                            </element>
-                        </type>
-                    </element>
-                    <element name="audio">
-                        <annotation>
-                            <info>
-                                Sound to be played, either .wav or .au
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="urlname" type="string"/>
-                            <attribute name="starttime" type="int">
-                                <annotation>
-                                    <info>
-                                        Number of seconds audio should start playing after slide is loaded.
-                                    </info>
-                                </annotation>
-                            </attribute>
-                            <attribute name="loop" type="boolean">
-                                <annotation>
-                                    <info>
-                                        Whether the audio should loop for the current slide - loop if set to true.
-                                    </info>
-                                </annotation>
-                            </attribute>
-                        </type>
-                    </element>
-                    <element name="image">
-                        <annotation>
-                            <info>
-                                Image to be displayed, either GIF or JPEG
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="urlname" type="string"/>
-                            <attribute name="xstart" type="int"/>
-                            <attribute name="ystart" type="int"/>
-                            <attribute name="width" type="int"/>
-                            <attribute name="height" type="int"/>
-                            <attribute name="starttime" type="int"/>
-                            <attribute name="endtime" type="int"/>
-                        </type>
-                    </element>
-                    <element name="midi">
-                        <annotation>
-                            <info>
-                                MIDI file to be played.
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="urlname" type="string"/>
-                            <attribute name="starttime" type="int">
-                                <annotation>
-                                    <info>
-                                        Number of seconds audio should start playing after slide is loaded.
-                                    </info>
-                                </annotation>
-                            </attribute>
-                            <attribute name="loop" type="boolean">
-                                <annotation>
-                                    <info>
-                                        Whether the audio should loop for the current slide - loop if set to true.
-                                    </info>
-                                </annotation>
-                            </attribute>
-                        </type>
-                    </element>
-                    <element name="video">
-                        <annotation>
-                            <info>
-                                Video to be played.
-                            </info>
-                        </annotation>
-                        <type>
-                            <attribute name="urlname" type="string"/>
-                            <attribute name="starttime" type="int">
-                                <annotation>
-                                    <info>
-                                        Number of seconds video should start playing after slide is loaded.
-                                    </info>
-                                </annotation>
-                            </attribute>
-                            <attribute name="loop" type="boolean">
-                                <annotation>
-                                    <info>
-                                        Whether the video should loop for the current slide - loop if set to true.
-                                    </info>
-                                </annotation>
-                            </attribute>
-                            <attribute name="xstart" type="int"/>
-                            <attribute name="ystart" type="int"/>
-                        </type>
-                    </element>
-                </type>
-            </element>
-        </type>
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" version="1.0">
+    <element name="Presentation">
+        <complexType>
+			<choice maxOccurs="unbounded">
+
+				<element name="Meta" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<attribute name="key" type="string"  use="required"/>
+						<attribute name="value" type="string"  use="required"/>
+					</complexType>
+				</element>
+
+				<element name="Slide" minOccurs="1" maxOccurs="unbounded">
+					<complexType>
+						<choice maxOccurs="unbounded">
+							<element name="Text" minOccurs="0" maxOccurs="unbounded">
+								<complexType  mixed="true">
+									<choice minOccurs="0" maxOccurs="unbounded">
+										<element name="Format" minOccurs="0" maxOccurs="unbounded">
+											<complexType mixed="true">
+												 <simpleContent>
+													<extension base="string">
+														<attribute name="id" type="string"/>
+														<attribute name="italic" type="boolean"/>
+														<attribute name="bold" type="boolean"/>
+														<attribute name="underline" type="boolean"/>
+														<attribute name="textsize" type="int"/>
+														<attribute name="textcolor" type="string"/>
+														<attribute name="font" type="string"/>
+														<attribute name="duration" type="int"/>
+														<attribute name="start" type="start_type"/>
+													</extension>
+												</simpleContent>
+											</complexType>
+										</element>
+										<element name="br" minOccurs="0" maxOccurs="unbounded"/>
+									</choice>
+									<attribute name="id" type="string"/>
+									<attribute name="italic" type="boolean"/>
+									<attribute name="bold" type="boolean"/>
+									<attribute name="underline" type="boolean"/>
+									<attribute name="textsize" type="int"/>
+									<attribute name="textcolor" type="string"/>
+									<attribute name="font" type="string"/>
+									<attribute name="duration" type="int"/>
+									<attribute name="start" type="start_type"/>
+								</complexType>
+							</element>
+							<element name="Shape" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="type" type="string">
+										<simpleType>
+											<restriction base="string">
+												<enumeration value="eclipse"/>
+												<enumeration value="square"/>
+											</restriction>
+										</simpleType>
+									</attribute>
+									<attribute name="x" type="int"/>
+									<attribute name="y" type="int"/>
+									<attribute name="x2" type="int"/>
+									<attribute name="y2" type="int"/>
+									<attribute name="fill" type="string"/>
+									<attribute name="duration" type="int"/>
+									<attribute name="start" type="start_type"/>
+								</complexType>
+							</element>
+							<element name="Image" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="path" type="string"/>
+									<attribute name="x" type="int"/>
+									<attribute name="y" type="int"/>
+									<attribute name="width" type="int"/>
+									<attribute name="height" type="int"/>
+									<attribute name="duration" type="int"/>
+									<attribute name="start" type="start_type"/>
+								</complexType>
+							</element>
+							<element name="Audio" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="path" type="string"/>
+									<attribute name="x" type="int"/>
+									<attribute name="y" type="int"/>
+									<attribute name="width" type="int"/>
+									<attribute name="height" type="int"/>
+									<attribute name="duration" type="int"/>
+									<attribute name="start" type="start_type"/>
+								</complexType>
+							</element>
+							<element name="Video" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="path" type="string"/>
+									<attribute name="x" type="int"/>
+									<attribute name="y" type="int"/>
+									<attribute name="width" type="int"/>
+									<attribute name="height" type="int"/>
+									<attribute name="duration" type="int"/>
+									<attribute name="start" type="start_type"/>
+								</complexType>
+							</element>
+						</choice>
+
+						<attribute name="italic" type="boolean"/>
+						<attribute name="bold" type="boolean"/>
+						<attribute name="underline" type="boolean"/>
+						<attribute name="textsize" type="int"/>
+						<attribute name="textcolor" type="string"/>
+						<attribute name="font" type="string"/>
+
+						<attribute name="duration" type="int"/>
+
+					</complexType>
+				</element>
+			</choice>
+
+			<attribute name="italic" type="boolean"/>
+			<attribute name="bold" type="boolean"/>
+			<attribute name="underline" type="boolean"/>
+			<attribute name="textsize" type="int"/>
+			<attribute name="textcolor" type="string"/>
+			<attribute name="font" type="string"/>
+        </complexType>
     </element>
+
+	<simpleType name="start_type">
+		<union>
+			<simpleType>
+				<restriction base='xs:string'>
+					<enumeration value="trigger"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base='xs:integer'>
+					<minInclusive value="1"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
 </schema>
+
