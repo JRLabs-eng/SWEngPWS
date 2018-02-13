@@ -2,7 +2,7 @@ Project Wide Standards
 ======================
 
 - See [`schema.xsd`](schema.xsd) to see the XML schema (currently just the example from Project Web-page)
-- See [`sample.pws`](schema.xsd) for an example file
+- See [`sample.pws`](sample.pws) for an example file
 
 Description
 -----------
