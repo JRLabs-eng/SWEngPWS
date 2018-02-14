@@ -28,3 +28,7 @@ Other formats can be used but are not guaranteed by the standard
 color:   #22AE93   (hexadecimal, first 2 bytes red, second 2 bytes green, third 2 bytes blue, as per HTML/CSS standard)
 
 font:	any font available on the system – fallback to be specified by implementation
+
+Documentation
+------------
+https://jackoro.github.io/SWEngPWS/
