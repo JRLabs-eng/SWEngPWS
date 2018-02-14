@@ -5,6 +5,14 @@
 
    <xsl:output method="html"/>
 
+   <xsl:template match="xs:attributeGroup" mode="attribute-groups">
+      <tr>
+         <td>
+            <xsl:value-of select="@ref" />
+         </td>
+      </tr>
+   </xsl:template>
+
    <xsl:template match="xs:attribute" mode="attributes">
       <tr valign="baseline">
          <th align="left" rowspan="2">
@@ -120,6 +128,15 @@
                mode="attributes"/>
             <xsl:apply-templates select="xs:complexType/xs:attribute"
                mode="attributes"/>
+         </table>
+      </xsl:if>
+      <xsl:if test="descendant::xs:attributeGroup">
+         <table border="1">
+            <caption>Attribute Groups</caption>
+            <xsl:apply-templates select="xs:complexType/xs:attributeGroup"
+               mode="attribute-groups"/>
+            <xsl:apply-templates select="xs:complexType/xs:simpleContent/xs:extension/xs:attributeGroup"
+               mode="attribute-groups"/>
          </table>
       </xsl:if>
       <h3>Content Model</h3>

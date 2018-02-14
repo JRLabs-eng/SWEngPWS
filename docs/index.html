@@ -28,25 +28,15 @@
 <li><a href="#group-position">position</a></li>
 <li><a href="#group-transitions">transitions</a></li>
 </ul></section>
-      <p>
+      
          Version 1.0.
 
          Actual specification evolution &amp; discussion takes place at //github.com/JackoRo/SWEngPWS where pull requests can be made.
-      </p>
-   
-   
-      
-         <p>The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.</p>
-      
-      
-      
-      
       
    
    
       
-         <p>All text formatting options (except color).</p>
-      
+         The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.
       
       
       
@@ -55,7 +45,17 @@
    
    
       
-         <p>Defines the fill color and the foreground/stroke/text color.</p>
+         All text formatting options (except color).
+      
+      
+      
+      
+      
+      
+   
+   
+      
+         Defines the fill color and the foreground/stroke/text color.
       
       
       
@@ -100,8 +100,13 @@
    
    <section><h2 id="element-type-Presentation">Element: <code>&lt;Presentation&gt;</code>
 </h2>
-         <p>The top-level element that contains the presentation.</p>
+         The top-level element that contains the presentation.
       <table border="1"><caption>Attributes</caption></table>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:fonts</td></tr>
+<tr><td>pws:colors</td></tr>
+</table>
 <h3>Content Model</h3>
          <p>1 or more choice of:</p>
 <ul>
@@ -129,17 +134,35 @@
             <section><h2 id="element-type-Slide">Element: <code>&lt;Slide&gt;</code>
 </h2>
 <table border="1"><caption>Attributes</caption></table>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:fonts</td></tr>
+<tr><td>pws:colors</td></tr>
+<tr><td>pws:transitions</td></tr>
+</table>
 <h3>Content Model</h3>
                   <p>1 or more choice of:</p>
 <ul>
                      <section><h2 id="element-type-Text">Element: <code>&lt;Text&gt;</code>
 </h2>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:position</td></tr>
+<tr><td>pws:fonts</td></tr>
+<tr><td>pws:colors</td></tr>
+<tr><td>pws:transitions</td></tr>
+</table>
 <h3>Content Model</h3>
 <p>Mixed content, including:</p>
                            <p>1 or more choice of:</p>
 <ul>
                               <section><h2 id="element-type-Format">Element: <code>&lt;Format&gt;</code>
 </h2>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:fonts</td></tr>
+<tr><td>pws:colors</td></tr>
+</table>
 <h3>Content Model</h3>
                                     
                                        
@@ -177,6 +200,11 @@
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 </table>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:position</td></tr>
+<tr><td>pws:colors</td></tr>
+</table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
                      <section><h2 id="element-type-Image">Element: <code>&lt;Image&gt;</code>
@@ -190,6 +218,10 @@
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
+</table>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:position</td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
@@ -205,6 +237,10 @@
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 </table>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:position</td></tr>
+</table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
                      <section><h2 id="element-type-Video">Element: <code>&lt;Video&gt;</code>
@@ -218,6 +254,10 @@
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
+</table>
+<table border="1">
+<caption>Attribute Groups</caption>
+<tr><td>pws:position</td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
