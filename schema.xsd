@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pws="pws" version="1.0" elementFormDefault="qualified" targetNamespace="pws">
    <attributeGroup name="position">
-      <attribute name="x" type="int" />
-      <attribute name="y" type="int" />
-      <attribute name="x2" type="int" />
-      <attribute name="y2" type="int" />
+      <attribute name="x" type="decimal" />
+      <attribute name="y" type="decimal" />
+      <attribute name="x2" type="decimal" />
+      <attribute name="y2" type="decimal" />
    </attributeGroup>
    <attributeGroup name="fonts">
       <attribute name="font" type="string" />
@@ -102,7 +102,7 @@
                            <attributeGroup ref="pws:position" />
                            <attributeGroup ref="pws:colors" />
                            <attribute name="type" type="pws:shapeType" />
-                           <attribute name="stroke" type="int" />
+                           <attribute name="stroke" type="decimal" />
                         </complexType>
                      </element>
                      <element name="Image" minOccurs="0" maxOccurs="unbounded">
