@@ -27,7 +27,7 @@
    </attributeGroup>
    <attributeGroup name="fonts">
       <annotation>
-         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inhert them from it's parent</documentation>
+         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inherit them from it's parent</documentation>
       </annotation>
       <attribute name="font" type="string"/>
       <attribute name="italic" type="boolean" />
@@ -84,7 +84,7 @@
    <simpleType name="colorType">
       <annotation>
         <documentation>
-          Defines supported colour formats. Alpha is not supported nor are there digit hex codes
+          Defines supported colour formats. Alpha is not supported nor are there digit hex codes.
          #RRGGBB
          gradient(#RRGGBB,#RRGGBB)
        </documentation>
@@ -200,7 +200,7 @@
                      <element name="Video" minOccurs="0" maxOccurs="unbounded">
                         <annotation>
                            <documentation>
-                           Embeded video file.
+                           Embedded video file.
                            MP4 files are supported.
                            Other file formats may be supported, though this is not guaranteed.
                            </documentation>
