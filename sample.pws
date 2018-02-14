@@ -1,57 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pws:Presentation
-	xmlns="http://www.w3.org"
+<Presentation
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="pws schema.xsd"
-	xmlns:pws="pws"
+	xmlns="pws"
 	italic="false" bold="false" underline="false" textsize="12" color="#F341DE" font="Times New Roman">
-   <pws:Meta key="author" value="Stuart Porter" />
-   <pws:Slide duration="12">
-      <pws:Text textsize="18" underline="true" font="Times New Roman">
+   <Meta key="author" value="Stuart Porter" />
+   <Slide duration="12">
+      <Text textsize="18" underline="true" font="Times New Roman">
          This is the schema of the
-         <pws:Format bold="true" color="#F341DE">PWS</pws:Format>
+         <Format bold="true" color="#F341DE">PWS</Format>
          file fromat agreed between
-         <pws:Format bold="true" color="#F314DE">SWEng</pws:Format>
+         <Format bold="true" color="#F314DE">SWEng</Format>
          groups.
-      </pws:Text>
-      <pws:Text>
+      </Text>
+      <Text>
          Text can contain
-         <pws:Format font="comic sans">Format</pws:Format>
+         <Format font="comic sans">Format</Format>
          tags that change how it is
-         <pws:Format italic="true">rendered</pws:Format>
+         <Format italic="true">rendered</Format>
          .
-         <pws:Br/>
+         <Br/>
          This slide is an example of that.
-      </pws:Text>
-   </pws:Slide>
-   <pws:Slide duration="12">
-      <pws:Text underline="true" textsize="18" color="#F341DE" font="Times New Roman">
+      </Text>
+   </Slide>
+   <Slide duration="12">
+      <Text underline="true" textsize="18" color="#F341DE" font="Times New Roman">
          The Schema also defines
-         <pws:Format underline="false" textsize="24">Shapes</pws:Format>
+         <Format underline="false" textsize="24">Shapes</Format>
          !
-      </pws:Text>
-      <pws:Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED,linear)" />
-      <pws:Shape x="103" y="123" type="rectangle" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED,linear)" />
-      <pws:Shape x="103" y="123" type="line" x2="583" y2="933" fill="#382345" />
-   </pws:Slide>
-   <pws:Slide fill="#023211" color="#F341DE" duration="20">
-      <pws:Text bold="true" underline="true" textsize="10" duration="12" start="trigger">
+      </Text>
+      <Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED,linear)" />
+      <Shape x="103" y="123" type="rectangle" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED,linear)" />
+      <Shape x="103" y="123" type="line" x2="583" y2="933" fill="#382345" />
+   </Slide>
+   <Slide fill="#023211" color="#F341DE" duration="20">
+      <Text bold="true" underline="true" textsize="10" duration="12" start="trigger">
          Some text on one line
-         <pws:Br />
-         <pws:Format italic="true" bold="false" textsize="12" color="#F341DE" font="Helvetica">Some</pws:Format>
+         <Br />
+         <Format italic="true" bold="false" textsize="12" color="#F341DE" font="Helvetica">Some</Format>
          text
-         <pws:Br />
-         <pws:Br />
+         <Br />
+         <Br />
          Some more text
-      </pws:Text>
-      <pws:Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
-   </pws:Slide>
-   <pws:Slide fill="#FEDDFE" color="#032222">
-      <pws:Image path="../local_file.jpg" x="10" y="35" x2="100" y2="200" />
-      <pws:Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
-   </pws:Slide>
-   <pws:Slide>
-      <pws:Video path="../local_file.jpg" x="10" y="35" x2="100" y2="200" />
-      <pws:Audio path="../local_file.wav" x="50" y="100" x2="10" y2="10" />
-   </pws:Slide>
-</pws:Presentation>
+      </Text>
+      <Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
+   </Slide>
+   <Slide fill="#FEDDFE" color="#032222">
+      <Image path="../local_file.jpg" x="10" y="35" x2="100" y2="200" />
+      <Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
+   </Slide>
+   <Slide>
+      <Video path="../local_file.jpg" x="10" y="35" x2="100" y2="200" />
+      <Audio path="../local_file.wav" x="50" y="100" x2="10" y2="10" />
+   </Slide>
+</Presentation>
