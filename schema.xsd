@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pws="pws" version="1.0" elementFormDefault="qualified" targetNamespace="pws">
    <attributeGroup name="position">
+      <annotation>
+         <documentation>The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.</documentation>
+      </annotation>
       <attribute name="x" type="decimal" />
       <attribute name="y" type="decimal" />
       <attribute name="x2" type="decimal" />
       <attribute name="y2" type="decimal" />
    </attributeGroup>
    <attributeGroup name="fonts">
+      <annotation>
+         <documentation>All text formatting options (except color).</documentation>
+      </annotation>
       <attribute name="font" type="string" />
       <attribute name="italic" type="boolean" />
       <attribute name="bold" type="boolean" />
@@ -14,6 +20,9 @@
       <attribute name="underline" type="boolean" />
    </attributeGroup>
    <attributeGroup name="colors">
+      <annotation>
+         <documentation>Defines the fill color and the foreground/stroke/text color.</documentation>
+      </annotation>
       <attribute name="color" type="pws:colorType" />
       <attribute name="fill" type="pws:colorType" />
    </attributeGroup>
