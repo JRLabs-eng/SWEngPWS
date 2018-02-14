@@ -129,7 +129,9 @@
     <xsl:if test="descendant::xs:attribute">
       <table border="1">
         <caption>Attributes</caption>
-        <xsl:apply-templates select="descendant::xs:attribute"
+        <xsl:apply-templates select="xs:complexType/xs:simpleContent/xs:extension/xs:attribute"
+          mode="attributes"/>
+        <xsl:apply-templates select="xs:complexType/xs:attribute"
           mode="attributes"/>
       </table>
     </xsl:if>
