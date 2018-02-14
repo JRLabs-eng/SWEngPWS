@@ -27,7 +27,7 @@
    </attributeGroup>
    <attributeGroup name="fonts">
       <annotation>
-         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inhert them from it's parent</documentation>
+         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inherit them from it's parent</documentation>
       </annotation>
       <attribute name="font" type="string"/>
       <attribute name="italic" type="boolean" />
@@ -88,6 +88,7 @@
         Hash prefixed 6-digit hex codes, in the form of '#RRGGBB'. <br/>
         Two color vertical gradients, in the form of 'gradient(#RRGGBB,#RRGGBB)'. <br/>
 		Alpha is not supported, nor are 3-digit hex codes.
+
        </documentation>
      </annotation>
          <union>
@@ -201,7 +202,7 @@
                      <element name="Video" minOccurs="0" maxOccurs="unbounded">
                         <annotation>
                            <documentation>
-                           Embeded video file.
+                           Embedded video file.
                            MP4 files are supported.
                            Other file formats may be supported, though this is not guaranteed.
                            </documentation>
