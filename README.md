@@ -6,8 +6,9 @@ Project Wide Standards
 
 You can validate the sample (or any other PWS file) against the schema using [`xmllint`](http://xmlsoft.org/xmllint.html):
 
-	xmllint --noout --schema schema.xsd sample.pws	
+	xmllint --noout --schema schema.xsd sample.pws
 
+Or online at https://www.xmlvalidation.com/
 Description
 -----------
 

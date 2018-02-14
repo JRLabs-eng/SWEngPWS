@@ -1,24 +1,52 @@
-<?xml version="1.0"?>
-<Presentation
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="schema.xsd"
-	textsize="12" color="#F341DE" font="Times New Roman">
-<Meta key="author" value="Stuart Porter" />
-	<Slide fill="#023211" color="#F341DE" duration="20">
-		<Text bold="true" underline="true" textsize="10" duration="12" start="trigger">
-			Some text on one line<br />
-			<Format italic="true" bold="false" textsize="12" color="#F341DE" font="Helvetica">Some</Format> text<br />
-			<br />
-			Some more text
-		</Text>
-		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
-	</Slide>
-	<Slide fill="#FEDDFE" color="#032222">
-		<Image path="../local_file.jpg" x="10" y="35" width="100" height="200" />
-		<Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
-	</Slide>
-	<Slide>
-		<Video path="../local_file.jpg" x="10" y="35" width="100" height="200" />
-		<Audio path="../local_file.wav" x="50" y="100" width="10" height="10" />
-	</Slide>
+<?xml version="1.0" encoding="UTF-8"?>
+<Presentation xmlns="pws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="pws schema.xsd" italic="false" bold="false" underline="false" textsize="12" color="#F341DE" font="Times New Roman">
+   <Meta key="author" value="Stuart Porter" />
+   <Slide duration="12">
+      <Text textsize="18" underline="true" font="Times New Roman">
+         This is the schema of the
+         <Format bold="true" color="#F341DE">PWS</Format>
+         file fromat agreed between
+         <Format bold="true" color="#F314DE">SWEng</Format>
+         groups.
+      </Text>
+      <Text>
+         Text can contain
+         <Format font="comic sans">Format</Format>
+         tags that change how it is
+         <Format italic="true">rendered</Format>
+         .
+         <Br />
+         This slide is an example of that.
+      </Text>
+   </Slide>
+   <Slide duration="12">
+      <Text underline="true" textsize="18" color="#F341DE" font="Times New Roman">
+         The Schema also defines
+         <Format underline="false" textsize="24">Shapes</Format>
+         !
+      </Text>
+      <Shape x="103" y="123" type="ellipse" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED,linear)" />
+      <Shape x="103" y="123" type="rectangle" x2="583" y2="933" fill="gradient(#38AEDE,#3482ED,linear)" />
+      <Shape x="103" y="123" type="line" x2="583" y2="933" fill="#382345" />
+   </Slide>
+   <Slide fill="#023211" color="#F341DE" duration="20">
+      <Text bold="true" underline="true" textsize="10" duration="12" start="trigger">
+         Some text on one line
+         <Br />
+         <Format italic="true" bold="false" textsize="12" color="#F341DE" font="Helvetica">Some</Format>
+         text
+         <Br />
+         <Br />
+         Some more text
+      </Text>
+      <Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
+   </Slide>
+   <Slide fill="#FEDDFE" color="#032222">
+      <Image path="../local_file.jpg" x="10" y="35" x2="100" y2="200" />
+      <Shape x="103" y="123" type="ellipse" x2="583" y2="933" stroke="2" color="#000000" fill="gradient(#38AEDE,#3482ED)" />
+   </Slide>
+   <Slide>
+      <Video path="../local_file.jpg" x="10" y="35" x2="100" y2="200" />
+      <Audio path="../local_file.wav" x="50" y="100" x2="10" y2="10" />
+   </Slide>
 </Presentation>
