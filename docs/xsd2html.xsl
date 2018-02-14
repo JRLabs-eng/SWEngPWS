@@ -8,7 +8,8 @@
    <xsl:template match="xs:attributeGroup" mode="attribute-groups">
       <tr>
          <td>
-            <xsl:value-of select="@ref" />
+            <a href="#attribute-group-{@ref}"><xsl:value-of
+                  select="substring-after(@ref, ':')"/></a>
          </td>
       </tr>
    </xsl:template>
@@ -169,7 +170,7 @@
 
    <xsl:template match="xs:attributeGroup[@name]">
       <section>
-         <h2 id="attribute-group-{@name}">
+         <h2 id="attribute-group-pws:{@name}">
             <xsl:text>Attribute Group: </xsl:text>
             <code><xsl:value-of select="@name"/></code>
          </h2>
@@ -403,26 +404,13 @@
    <xsl:template name="toc">
       <section>
          <h2>Table of Contents</h2>
-         <xsl:if test="/xs:schema//xs:element">
-            <h3>Elements</h3>
-            <ul>
-               <xsl:for-each select="/xs:schema//xs:element">
-                  <xsl:sort select="@name"/>
-                  <li>
-                     <a href="#element-type-{@name}">
-                        <xsl:value-of select="@name"/>
-                     </a>
-                  </li>
-               </xsl:for-each>
-            </ul>
-         </xsl:if>
          <xsl:if test="/xs:schema/xs:attributeGroup">
             <h3>Attribute Groups</h3>
             <ul>
                <xsl:for-each select="/xs:schema/xs:attributeGroup">
                   <xsl:sort select="@name"/>
                   <li>
-                     <a href="#attribute-group-{@name}">
+                     <a href="#attribute-group-pws:{@name}">
                         <xsl:value-of select="@name"/>
                      </a>
                   </li>
@@ -436,6 +424,19 @@
                   <xsl:sort select="@name"/>
                   <li>
                      <a href="#simple-type-pws:{@name}">
+                        <xsl:value-of select="@name"/>
+                     </a>
+                  </li>
+               </xsl:for-each>
+            </ul>
+         </xsl:if>
+         <xsl:if test="/xs:schema//xs:element">
+            <h3>Elements</h3>
+            <ul>
+               <xsl:for-each select="/xs:schema//xs:element">
+                  <xsl:sort select="@name"/>
+                  <li>
+                     <a href="#element-type-{@name}">
                         <xsl:value-of select="@name"/>
                      </a>
                   </li>

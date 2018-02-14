@@ -8,6 +8,19 @@
    
       <h1>Project Wide Specification (PWS)</h1>
 <section><h2>Table of Contents</h2>
+<h3>Attribute Groups</h3>
+<ul>
+<li><a href="#attribute-group-pws:colors">colors</a></li>
+<li><a href="#attribute-group-pws:fonts">fonts</a></li>
+<li><a href="#attribute-group-pws:position">position</a></li>
+<li><a href="#attribute-group-pws:transitions">transitions</a></li>
+</ul>
+<h3>Types</h3>
+<ul>
+<li><a href="#simple-type-pws:colorType">colorType</a></li>
+<li><a href="#simple-type-pws:shapeType">shapeType</a></li>
+<li><a href="#simple-type-pws:startType">startType</a></li>
+</ul>
 <h3>Elements</h3>
 <ul>
 <li><a href="#element-type-Audio">Audio</a></li>
@@ -20,19 +33,6 @@
 <li><a href="#element-type-Slide">Slide</a></li>
 <li><a href="#element-type-Text">Text</a></li>
 <li><a href="#element-type-Video">Video</a></li>
-</ul>
-<h3>Attribute Groups</h3>
-<ul>
-<li><a href="#attribute-group-colors">colors</a></li>
-<li><a href="#attribute-group-fonts">fonts</a></li>
-<li><a href="#attribute-group-position">position</a></li>
-<li><a href="#attribute-group-transitions">transitions</a></li>
-</ul>
-<h3>Types</h3>
-<ul>
-<li><a href="#simple-type-pws:colorType">colorType</a></li>
-<li><a href="#simple-type-pws:shapeType">shapeType</a></li>
-<li><a href="#simple-type-pws:startType">startType</a></li>
 </ul></section>
       <p>
          Version 1.0.
@@ -40,7 +40,7 @@
          Actual specification evolution &amp; discussion takes place at //github.com/JackoRo/SWEngPWS where pull requests can be made.
       </p>
    
-   <section><h2 id="attribute-group-position">Attribute Group: <code>position</code>
+   <section><h2 id="attribute-group-pws:position">Attribute Group: <code>position</code>
 </h2>
          The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.
       <table border="1">
@@ -70,7 +70,7 @@
 </tr>
 <tr valign="baseline"><td colspan="2">The y co-ordinate of the bottom right corner of the element</td></tr>
 </table></section>
-   <section><h2 id="attribute-group-fonts">Attribute Group: <code>fonts</code>
+   <section><h2 id="attribute-group-pws:fonts">Attribute Group: <code>fonts</code>
 </h2>
          All text formatting options (except color). If these attributes are omitted on an element, it will inherit them from its parent
       <table border="1">
@@ -116,7 +116,7 @@
             Whether the text should be underlined.
          </td></tr>
 </table></section>
-   <section><h2 id="attribute-group-colors">Attribute Group: <code>colors</code>
+   <section><h2 id="attribute-group-pws:colors">Attribute Group: <code>colors</code>
 </h2>
          Defines the fill color and the foreground/stroke/text color
       <table border="1">
@@ -140,7 +140,7 @@
             The background colour.
          </td></tr>
 </table></section>
-   <section><h2 id="attribute-group-transitions">Attribute Group: <code>transitions</code>
+   <section><h2 id="attribute-group-pws:transitions">Attribute Group: <code>transitions</code>
 </h2>
          Timing controls for automatic animation/transitions of elements
       <table border="1">
@@ -211,8 +211,8 @@
       <table border="1"><caption>Attributes</caption></table>
 <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:fonts</td></tr>
-<tr><td>pws:colors</td></tr>
+<tr><td><a href="#attribute-group-pws:fonts">fonts</a></td></tr>
+<tr><td><a href="#attribute-group-pws:colors">colors</a></td></tr>
 </table>
 <h3>Content Model</h3>
          <p>1 or more choice of:</p>
@@ -249,9 +249,9 @@
                <table border="1"><caption>Attributes</caption></table>
 <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:fonts</td></tr>
-<tr><td>pws:colors</td></tr>
-<tr><td>pws:transitions</td></tr>
+<tr><td><a href="#attribute-group-pws:fonts">fonts</a></td></tr>
+<tr><td><a href="#attribute-group-pws:colors">colors</a></td></tr>
+<tr><td><a href="#attribute-group-pws:transitions">transitions</a></td></tr>
 </table>
 <h3>Content Model</h3>
                   <p>1 or more choice of:</p>
@@ -261,10 +261,10 @@
                            Rich Text element
                         <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:position</td></tr>
-<tr><td>pws:fonts</td></tr>
-<tr><td>pws:colors</td></tr>
-<tr><td>pws:transitions</td></tr>
+<tr><td><a href="#attribute-group-pws:position">position</a></td></tr>
+<tr><td><a href="#attribute-group-pws:fonts">fonts</a></td></tr>
+<tr><td><a href="#attribute-group-pws:colors">colors</a></td></tr>
+<tr><td><a href="#attribute-group-pws:transitions">transitions</a></td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Mixed content, including:</p>
@@ -275,8 +275,8 @@
                                     Formats the contained text differently to the surrounding text
                                  <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:fonts</td></tr>
-<tr><td>pws:colors</td></tr>
+<tr><td><a href="#attribute-group-pws:fonts">fonts</a></td></tr>
+<tr><td><a href="#attribute-group-pws:colors">colors</a></td></tr>
 </table>
 <h3>Content Model</h3>
                                     
@@ -322,8 +322,8 @@
 </table>
 <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:position</td></tr>
-<tr><td>pws:colors</td></tr>
+<tr><td><a href="#attribute-group-pws:position">position</a></td></tr>
+<tr><td><a href="#attribute-group-pws:colors">colors</a></td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
@@ -347,7 +347,7 @@
 </table>
 <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:position</td></tr>
+<tr><td><a href="#attribute-group-pws:position">position</a></td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
@@ -371,7 +371,7 @@
 </table>
 <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:position</td></tr>
+<tr><td><a href="#attribute-group-pws:position">position</a></td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
@@ -395,7 +395,7 @@
 </table>
 <table border="1">
 <caption>Attribute Groups</caption>
-<tr><td>pws:position</td></tr>
+<tr><td><a href="#attribute-group-pws:position">position</a></td></tr>
 </table>
 <h3>Content Model</h3>
 <p>Empty</p></section>
