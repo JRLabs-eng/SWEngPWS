@@ -108,7 +108,7 @@
 </table></section>
    <section><h2 id="attribute-group-colors">Attribute Group: <code>colors</code>
 </h2>
-         Defines the fill color and the foreground/stroke/text color.
+         Defines the fill colour and the foreground/stroke/text colour.
       <table border="1">
 <caption>Attributes</caption>
 <tr valign="baseline">
@@ -149,7 +149,7 @@
 </h2>
         
           Either an interger number of seconds specifying how long to wait until starting the transition,
-          or the word "trigger" which specifys waiting for an event(such as a mouse click)
+          or the word "trigger" which specifies waiting for an event(such as a mouse click).
        
      <section>
             <p>Built-in type string
@@ -164,7 +164,7 @@
    <section><h2 id="simple-type-pws:shapeType">Simple Type: <code>shapeType</code>
 </h2>
         
-          Defines all vector shapes that are supported
+          Defines all vector shapes that are supported.
        
      <p>Built-in type string
             (
@@ -174,9 +174,10 @@
    <section><h2 id="simple-type-pws:colorType">Simple Type: <code>colorType</code>
 </h2>
         
-          Defines supported color formats. Alpha is not supported nor are there digit hex codes
-         #RRGGBB
-         gradient(#RRGGBB,#RRGGBB)
+        Defines supported colour formats;  
+        Hash prefixed 6-digit hex codes, in the form of '#RRGGBB'. 
+        Two color vertical gradients, in the form of 'gradient(#RRGGBB,#RRGGBB)'. 
+		Alpha is not supported, nor are 3-digit hex codes.
        
      <section>
             <p>Built-in type string</p>
@@ -201,8 +202,8 @@
             <section><h2 id="element-type-Meta">Element: <code>&lt;Meta&gt;</code>
 </h2>
                   
-                     Meta elements define key values pair of meta infomation that are unlikely to be dircectly rendered.
-                     Such as author infomation or revision number.
+                     Meta elements define key value pairs of meta infomation that are unlikely to be directly rendered.
+                     Such as author information and/or revision number.
                   
                <table border="1">
 <caption>Attributes</caption>
@@ -253,7 +254,7 @@
 <ul>
                               <section><h2 id="element-type-Format">Element: <code>&lt;Format&gt;</code>
 </h2>
-                                    Formats the text within diffrently to the surounding text
+                                    Formats the text within differently to the surrounding text
                                  <table border="1">
 <caption>Attribute Groups</caption>
 <tr><td>pws:fonts</td></tr>
@@ -309,7 +310,7 @@
                            
                            Bitmap Image element.
                            JPEG images are supported.
-                           Other file formats may be supported, though this is not garenteed.
+                           Other file formats may be supported, though this is not guaranteed.
                            
                         <table border="1">
 <caption>Attributes</caption>
@@ -329,9 +330,9 @@
                      <section><h2 id="element-type-Audio">Element: <code>&lt;Audio&gt;</code>
 </h2>
                            
-                           Embeded audio file.
+                           Embedded audio file.
                            WAV files are supported.
-                           Other file formats may be supported, though this is not garenteed.
+                           Other file formats may be supported, though this is not guaranteed.
                            
                         <table border="1">
 <caption>Attributes</caption>
@@ -353,7 +354,7 @@
                            
                            Embeded video file.
                            MP4 files are supported.
-                           Other file formats may be supported, though this is not garenteed.
+                           Other file formats may be supported, though this is not guaranteed.
                            
                         <table border="1">
 <caption>Attributes</caption>

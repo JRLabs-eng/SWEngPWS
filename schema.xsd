@@ -84,9 +84,10 @@
    <simpleType name="colorType">
       <annotation>
         <documentation>
-          Defines supported colour formats. Alpha is not supported nor are there digit hex codes
-         #RRGGBB
-         gradient(#RRGGBB,#RRGGBB)
+        Defines supported colour formats;  <br/>
+        Hash prefixed 6-digit hex codes, in the form of '#RRGGBB'. <br/>
+        Two color vertical gradients, in the form of 'gradient(#RRGGBB,#RRGGBB)'. <br/>
+		Alpha is not supported, nor are 3-digit hex codes.
        </documentation>
      </annotation>
          <union>
