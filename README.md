@@ -15,7 +15,7 @@ Or online at [xmlvalidation.com](//www.xmlvalidation.com).
 
 To rebuild documentation in `docs/` folder, using [`xmlstarlet`](//xmlstar.sourceforge.net):
 
-	xml tr docs/xsd2html.xsl schema.xsd >| docs/index.html
+	make
 
 Media Formats
 -----------
