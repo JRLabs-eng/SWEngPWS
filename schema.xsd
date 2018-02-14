@@ -205,8 +205,16 @@
                         <complexType>
                            <attributeGroup ref="pws:position" />
                            <attributeGroup ref="pws:colors" />
-                           <attribute name="type" type="pws:shapeType" use="required"/>
-                           <attribute name="stroke" type="decimal" />
+                           <attribute name="type" type="pws:shapeType" use="required">
+                              <annotation>
+                                 <documentation>The type of shape</documentation>
+                              </annotation>
+                           </attribute>
+                           <attribute name="stroke" type="decimal">
+                              <annotation>
+                                 <documentation>The pixel width of stroke (border) on the shape</documentation>
+                              </annotation>
+                           </attribute>
                         </complexType>
                      </element>
                      <element name="Image" minOccurs="0" maxOccurs="unbounded">
@@ -219,7 +227,11 @@
                         </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
-                           <attribute name="path" type="string" use="required"/>
+                           <attribute name="path" type="string" use="required">
+                              <annotation>
+                                 <documentation>The local filepath of the media file (accepts relative or absolute locations)</documentation>
+                              </annotation>
+                           </attribute>
                         </complexType>
                      </element>
                      <element name="Audio" minOccurs="0" maxOccurs="unbounded">
@@ -232,7 +244,11 @@
                         </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
-                           <attribute name="path" type="string" use="required"/>
+                           <attribute name="path" type="string" use="required">
+                              <annotation>
+                                 <documentation>The local filepath of the media file (accepts relative or absolute locations)</documentation>
+                              </annotation>
+                           </attribute>
                         </complexType>
                      </element>
                      <element name="Video" minOccurs="0" maxOccurs="unbounded">
@@ -245,7 +261,11 @@
                         </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
-                           <attribute name="path" type="string" use="required"/>
+                           <attribute name="path" type="string" use="required">
+                              <annotation>
+                                 <documentation>The local filepath of the media file (accepts relative or absolute locations)</documentation>
+                              </annotation>
+                           </attribute>
                         </complexType>
                      </element>
                   </choice>
