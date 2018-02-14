@@ -186,7 +186,7 @@
 
    <xsl:template match="xs:simpleType[@name]">
       <section>
-         <h2 id="simple-type-{@name}">
+         <h2 id="simple-type-pws:{@name}">
             <xsl:text>Simple Type: </xsl:text>
             <code><xsl:value-of select="@name"/></code>
          
@@ -213,11 +213,9 @@
    </xsl:template>
 
    <xsl:template match="xs:enumeration">
-      <li>
-         <code>
-            <xsl:value-of select="@value"/>
-         </code>
-      </li>
+      <code>
+         <xsl:value-of select="@value"/>
+      </code>
    </xsl:template>
 
    <xsl:template match="xs:group[@name]">
@@ -266,8 +264,12 @@
    </xsl:template>
 
    <xsl:template match="xs:union">
-      <p>Union type</p>
-      <section><xsl:apply-templates select="xs:simpleType"/></section>
+      <xsl:for-each select="xs:simpleType">
+         <section><xsl:apply-templates select="." /></section>
+         <xsl:if test="position() != last()">
+            <h3>OR</h3>
+         </xsl:if>
+      </xsl:for-each>
    </xsl:template>
 
    <xsl:template match="xs:pattern">
@@ -279,17 +281,19 @@
          <xsl:call-template name="simpleType">
             <xsl:with-param name="type" select="@base"/>
          </xsl:call-template>
+         <xsl:if test="xs:enumeration">
+            (
+            <xsl:for-each select="xs:enumeration">
+               <xsl:apply-templates select="." />
+               <xsl:if test="position() != last()">
+                  <xsl:text>,</xsl:text>
+               </xsl:if>
+            </xsl:for-each>
+            )
+         </xsl:if>
       </p>
       <xsl:if test="descendant::xs:pattern">
          <xsl:apply-templates select="xs:pattern" />
-      </xsl:if>
-      <xsl:if test="xs:enumeration">
-         <p>
-            <xsl:text>Enumeration:</xsl:text>
-         </p>
-         <ul>
-            <xsl:apply-templates select="xs:enumeration"/>
-         </ul>
       </xsl:if>
    </xsl:template>
 
@@ -382,16 +386,16 @@
    <xsl:template name="simpleType">
       <xsl:param name="type"/>
       <xsl:choose>
-         <xsl:when test="starts-with($type, 'xs:')">
-            <xsl:text>Built-in type </xsl:text>
-            <xsl:value-of
-               select="substring-after($type, ':')"/>
-         </xsl:when>
-         <xsl:otherwise>
+         <xsl:when test="starts-with($type, 'pws:')">
             <xsl:text>Simple type </xsl:text>
             <a href="#simple-type-{$type}">
-               <xsl:value-of select="$type"/>
+               <xsl:value-of
+                  select="substring-after($type, ':')"/>
             </a>
+         </xsl:when>
+         <xsl:otherwise>
+            <xsl:text>Built-in type </xsl:text>
+            <xsl:value-of select="$type"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
@@ -431,7 +435,7 @@
                <xsl:for-each select="/xs:schema/xs:simpleType">
                   <xsl:sort select="@name"/>
                   <li>
-                     <a href="#simple-type-{@name}">
+                     <a href="#simple-type-pws:{@name}">
                         <xsl:value-of select="@name"/>
                      </a>
                   </li>

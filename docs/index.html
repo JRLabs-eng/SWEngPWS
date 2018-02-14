@@ -30,9 +30,9 @@
 </ul>
 <h3>Types</h3>
 <ul>
-<li><a href="#simple-type-colorType">colorType</a></li>
-<li><a href="#simple-type-shapeType">shapeType</a></li>
-<li><a href="#simple-type-startType">startType</a></li>
+<li><a href="#simple-type-pws:colorType">colorType</a></li>
+<li><a href="#simple-type-pws:shapeType">shapeType</a></li>
+<li><a href="#simple-type-pws:startType">startType</a></li>
 </ul></section>
       <p>
          Version 1.0.
@@ -47,29 +47,25 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">x</th>
-<td>Simple type <a href="#simple-type-decimal">decimal</a>
-</td>
+<td>Built-in type decimal</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">y</th>
-<td>Simple type <a href="#simple-type-decimal">decimal</a>
-</td>
+<td>Built-in type decimal</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">x2</th>
-<td>Simple type <a href="#simple-type-decimal">decimal</a>
-</td>
+<td>Built-in type decimal</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">y2</th>
-<td>Simple type <a href="#simple-type-decimal">decimal</a>
-</td>
+<td>Built-in type decimal</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
@@ -81,36 +77,31 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">font</th>
-<td>Simple type <a href="#simple-type-string">string</a>
-</td>
+<td>Built-in type string</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">italic</th>
-<td>Simple type <a href="#simple-type-boolean">boolean</a>
-</td>
+<td>Built-in type boolean</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">bold</th>
-<td>Simple type <a href="#simple-type-boolean">boolean</a>
-</td>
+<td>Built-in type boolean</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">textsize</th>
-<td>Simple type <a href="#simple-type-int">int</a>
-</td>
+<td>Built-in type int</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">underline</th>
-<td>Simple type <a href="#simple-type-boolean">boolean</a>
-</td>
+<td>Built-in type boolean</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
@@ -122,14 +113,14 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">color</th>
-<td>Simple type <a href="#simple-type-pws:colorType">pws:colorType</a>
+<td>Simple type <a href="#simple-type-pws:colorType">colorType</a>
 </td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">fill</th>
-<td>Simple type <a href="#simple-type-pws:colorType">pws:colorType</a>
+<td>Simple type <a href="#simple-type-pws:colorType">colorType</a>
 </td>
 <td>optional</td>
 </tr>
@@ -141,49 +132,49 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">duration</th>
-<td>Simple type <a href="#simple-type-int">int</a>
-</td>
+<td>Built-in type int</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">start</th>
-<td>Simple type <a href="#simple-type-pws:startType">pws:startType</a>
+<td>Simple type <a href="#simple-type-pws:startType">startType</a>
 </td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 </table></section>
-   <section><h2 id="simple-type-startType">Simple Type: <code>startType</code>
+   <section><h2 id="simple-type-pws:startType">Simple Type: <code>startType</code>
 </h2>
-<p>Union type</p>
 <section>
-            <p>Simple type <a href="#simple-type-string">string</a></p>
-<p>Enumeration:</p>
-<ul><li><code>trigger</code></li></ul>
-         
-            <p>Simple type <a href="#simple-type-integer">integer</a></p>
+            <p>Built-in type string
+            (
+            <code>trigger</code>
+            )
+         </p>
+         </section><h3>OR</h3>
+<section>
+            <p>Built-in type integer</p>
          </section></section>
-   <section><h2 id="simple-type-shapeType">Simple Type: <code>shapeType</code>
+   <section><h2 id="simple-type-pws:shapeType">Simple Type: <code>shapeType</code>
 </h2>
-<p>Simple type <a href="#simple-type-string">string</a></p>
-<p>Enumeration:</p>
-<ul>
-<li><code>ellipse</code></li>
-<li><code>rectangle</code></li>
-<li><code>line</code></li>
-</ul></section>
-   <section><h2 id="simple-type-colorType">Simple Type: <code>colorType</code>
+<p>Built-in type string
+            (
+            <code>ellipse</code>,<code>rectangle</code>,<code>line</code>
+            )
+         </p></section>
+   <section><h2 id="simple-type-pws:colorType">Simple Type: <code>colorType</code>
 </h2>
-<p>Union type</p>
 <section>
-            <p>Simple type <a href="#simple-type-string">string</a></p>
+            <p>Built-in type string</p>
 <p>Pattern: <code>#[0-9A-Fa-f]{6}</code></p>
-         
-            <p>Simple type <a href="#simple-type-string">string</a></p>
+         </section><h3>OR</h3>
+<section>
+            <p>Built-in type string</p>
 <p>Pattern: <code>gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6}\)</code></p>
-         
-            <p>Simple type <a href="#simple-type-string">string</a></p>
+         </section><h3>OR</h3>
+<section>
+            <p>Built-in type string</p>
 <p>Pattern: <code>gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6},linear\)</code></p>
          </section></section>
    <section><h2 id="element-type-Presentation">Element: <code>&lt;Presentation&gt;</code>
@@ -204,15 +195,13 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">key</th>
-<td>Simple type <a href="#simple-type-string">string</a>
-</td>
+<td>Built-in type string</td>
 <td>required</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">value</th>
-<td>Simple type <a href="#simple-type-string">string</a>
-</td>
+<td>Built-in type string</td>
 <td>required</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
@@ -275,15 +264,14 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">type</th>
-<td>Simple type <a href="#simple-type-pws:shapeType">pws:shapeType</a>
+<td>Simple type <a href="#simple-type-pws:shapeType">shapeType</a>
 </td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">stroke</th>
-<td>Simple type <a href="#simple-type-decimal">decimal</a>
-</td>
+<td>Built-in type decimal</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
@@ -301,8 +289,7 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">path</th>
-<td>Simple type <a href="#simple-type-string">string</a>
-</td>
+<td>Built-in type string</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
@@ -319,8 +306,7 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">path</th>
-<td>Simple type <a href="#simple-type-string">string</a>
-</td>
+<td>Built-in type string</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
@@ -337,8 +323,7 @@
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">path</th>
-<td>Simple type <a href="#simple-type-string">string</a>
-</td>
+<td>Built-in type string</td>
 <td>optional</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
