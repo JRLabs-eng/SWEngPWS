@@ -33,21 +33,4 @@ To rebuild documentation in `docs/` folder, using [`xmlstarlet`](//xmlstar.sourc
 
 	make
 
-Media Formats
------------
 
-- audio: wav
-- image: jpg
-- video: mp4
-
-Other formats can be used but are not guaranteed by the standard.
-
-Color Strings
-------
-
-E.g. `#22AE93` (hexadecimal: first 2 bytes red, second 2 bytes green, third 2 bytes blue, as per HTML/CSS standard)
-
-Fonts
------
-
-Any font available on the system – fallback to be specified by implementation
