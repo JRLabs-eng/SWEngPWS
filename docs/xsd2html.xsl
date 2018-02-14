@@ -350,10 +350,10 @@
 
   <xsl:template name="toc">
     <h2>Table of Contents</h2>
-    <xsl:if test="/xs:schema/xs:element">
+    <xsl:if test="/xs:schema//xs:element">
       <h3>Elements</h3>
       <ul>
-        <xsl:for-each select="/xs:schema/xs:element">
+         <xsl:for-each select="/xs:schema//xs:element">
           <xsl:sort select="@name"/>
           <li>
             <a href="#element-type-{@name}">
@@ -363,10 +363,10 @@
         </xsl:for-each>
       </ul>
     </xsl:if>
-    <xsl:if test="/xs:schema/xs:group">
-      <h3>Content Model Groups</h3>
+    <xsl:if test="/xs:schema/xs:attributeGroup">
+      <h3>Attribute Groups</h3>
       <ul>
-        <xsl:for-each select="/xs:schema/xs:group">
+        <xsl:for-each select="/xs:schema/xs:attributeGroup">
           <xsl:sort select="@name"/>
           <li>
             <a href="#group-{@name}">
@@ -376,6 +376,7 @@
         </xsl:for-each>
       </ul>
     </xsl:if>
+    <hr />
   </xsl:template>
 
 </xsl:transform>
