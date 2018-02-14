@@ -1,6 +1,9 @@
 Project Wide Specification (PWS)
 ================================
 
+⚠️➡️ **[VIEW HTML DOCUMENTATION HERE](//jackoro.github.io/SWEngPWS/)** ⬅️⚠️
+****************************
+
 - See [`schema.xsd`](schema.xsd) to see the XML schema
 - See [`sample.pws`](sample.pws) for an example file
 
@@ -12,23 +15,23 @@ Or online at [xmlvalidation.com](//www.xmlvalidation.com).
 
 To rebuild documentation in `docs/` folder, using [`xmlstarlet`](//xmlstar.sourceforge.net):
 
-    xml tr docs/xsd2html.xsl schema.xsd >| docs/index.html
+	xml tr docs/xsd2html.xsl schema.xsd >| docs/index.html
 
-Description
+Media Formats
 -----------
 
-formats
+- audio: wav
+- image: jpg
+- video: mp4
 
-	- audio: wav
-	- image: jpg
-	- video: mp4
+Other formats can be used but are not guaranteed by the standard.
 
-Other formats can be used but are not guaranteed by the standard
+Color Strings
+------
 
-color:   #22AE93   (hexadecimal, first 2 bytes red, second 2 bytes green, third 2 bytes blue, as per HTML/CSS standard)
+E.g. `#22AE93` (hexadecimal: first 2 bytes red, second 2 bytes green, third 2 bytes blue, as per HTML/CSS standard)
 
-font:	any font available on the system – fallback to be specified by implementation
+Fonts
+-----
 
-Documentation
-------------
-https://jackoro.github.io/SWEngPWS/
+Any font available on the system – fallback to be specified by implementation
