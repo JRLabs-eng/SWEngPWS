@@ -27,27 +27,63 @@
    </attributeGroup>
    <attributeGroup name="fonts">
       <annotation>
-         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inherit them from it's parent</documentation>
+         <documentation>All text formatting options (except colour). If these attributes are omitted on an element, it will inhert them from its parent</documentation>
       </annotation>
-      <attribute name="font" type="string"/>
-      <attribute name="italic" type="boolean" />
-      <attribute name="bold" type="boolean" />
-      <attribute name="textsize" type="int" />
-      <attribute name="underline" type="boolean" />
+      <attribute name="font" type="string">
+         <annotation>
+            <documentation>The font family to be used. If the specified family is not available, the implementor may define a fallback.</documentation>
+         </annotation>
+      </attribute>
+      <attribute name="italic" type="boolean">
+         <annotation>
+            <documentation>Whether the text should be italic.</documentation>
+         </annotation>
+      </attribute>
+      <attribute name="bold" type="boolean">
+         <annotation>
+            <documentation>Whether the text should be bold.</documentation>
+         </annotation>
+      </attribute>
+      <attribute name="textsize" type="int">
+         <annotation>
+            <documentation>The size (in points)</documentation>
+         </annotation>
+      </attribute>
+      <attribute name="underline" type="boolean">
+         <annotation>
+            <documentation>Whether the text should be underlined.</documentation>
+         </annotation>
+      </attribute>
    </attributeGroup>
    <attributeGroup name="colors">
       <annotation>
          <documentation>Defines the fill colour and the foreground/stroke/text colour.</documentation>
       </annotation>
-      <attribute name="color" type="pws:colorType" />
-      <attribute name="fill" type="pws:colorType" />
+      <attribute name="color" type="pws:colorType">
+         <annotation>
+            <documentation>The foreground/stroke/text colour.</documentation>
+         </annotation>
+      </attribute>
+      <attribute name="fill" type="pws:colorType">
+         <annotation>
+            <documentation>The background colour.</documentation>
+         </annotation>
+      </attribute>
    </attributeGroup>
    <attributeGroup name="transitions">
-        <annotation>
+      <annotation>
          <documentation>Timing controls for automatic animation/transitions of elements</documentation>
       </annotation>
-      <attribute name="duration" type="int" />
-      <attribute name="start" type="pws:startType" />
+      <attribute name="start" type="pws:startType">
+         <annotation>
+            <documentation>How long in seconds before the element appears, or whether it should wait to be user-triggered</documentation>
+         </annotation>
+      </attribute>
+      <attribute name="duration" type="int">
+         <annotation>
+            <documentation>How long in seconds before the element disappears</documentation>
+         </annotation>
+      </attribute>
    </attributeGroup>
    <simpleType name="startType">
       <annotation>

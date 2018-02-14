@@ -72,7 +72,7 @@
 </table></section>
    <section><h2 id="attribute-group-fonts">Attribute Group: <code>fonts</code>
 </h2>
-         All text formatting options (except color). If these attributes are omitted on an element, it will inherit them from it's parent
+         All text formatting options (except colour). If these attributes are omitted on an element, it will inhert them from its parent
       <table border="1">
 <caption>Attributes</caption>
 <tr valign="baseline">
@@ -80,31 +80,41 @@
 <td>Built-in type string</td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            The font family to be used. If the specified family is not available, the implementor may define a fallback.
+         </td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">italic</th>
 <td>Built-in type boolean</td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            Whether the text should be italic.
+         </td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">bold</th>
 <td>Built-in type boolean</td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            Whether the text should be bold.
+         </td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">textsize</th>
 <td>Built-in type int</td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            The size (in points)
+         </td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">underline</th>
 <td>Built-in type boolean</td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            Whether the text should be underlined.
+         </td></tr>
 </table></section>
    <section><h2 id="attribute-group-colors">Attribute Group: <code>colors</code>
 </h2>
@@ -117,14 +127,18 @@
 </td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            The foreground/stroke/text colour.
+         </td></tr>
 <tr valign="baseline">
 <th align="left" rowspan="2">fill</th>
 <td>Simple type <a href="#simple-type-pws:colorType">colorType</a>
 </td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            The background colour.
+         </td></tr>
 </table></section>
    <section><h2 id="attribute-group-transitions">Attribute Group: <code>transitions</code>
 </h2>
@@ -132,18 +146,22 @@
       <table border="1">
 <caption>Attributes</caption>
 <tr valign="baseline">
-<th align="left" rowspan="2">duration</th>
-<td>Built-in type int</td>
-<td>optional</td>
-</tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
-<tr valign="baseline">
 <th align="left" rowspan="2">start</th>
 <td>Simple type <a href="#simple-type-pws:startType">startType</a>
 </td>
 <td>optional</td>
 </tr>
-<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline"><td colspan="2">
+            How long in seconds before the element appears, or whether it should wait to be user-triggered
+         </td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">duration</th>
+<td>Built-in type int</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2">
+            How long in seconds before the element disappears
+         </td></tr>
 </table></section>
    <section><h2 id="simple-type-pws:startType">Simple Type: <code>startType</code>
 </h2>
