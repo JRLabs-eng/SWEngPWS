@@ -27,7 +27,7 @@
    </attributeGroup>
    <attributeGroup name="fonts">
       <annotation>
-         <documentation>All text formatting options (except colour). If these attributes are omitted on an element, it will inhert them from its parent</documentation>
+         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inherit them from its parent</documentation>
       </annotation>
       <attribute name="font" type="string">
          <annotation>
@@ -57,7 +57,7 @@
    </attributeGroup>
    <attributeGroup name="colors">
       <annotation>
-         <documentation>Defines the fill colour and the foreground/stroke/text colour.</documentation>
+         <documentation>Defines the fill color and the foreground/stroke/text color</documentation>
       </annotation>
       <attribute name="color" type="pws:colorType">
          <annotation>
@@ -88,8 +88,8 @@
    <simpleType name="startType">
       <annotation>
         <documentation>
-          Either an interger number of seconds specifying how long to wait until starting the transition,
-          or the word "trigger" which specifies waiting for an event(such as a mouse click).
+          Either an integer number of seconds specifying how long to wait until starting the transition,
+          or the word "trigger" which specifies waiting for an event (such as a mouse click)
        </documentation>
      </annotation>
       <union>
@@ -120,11 +120,10 @@
    <simpleType name="colorType">
       <annotation>
         <documentation>
-        Defines supported colour formats;  <br/>
+        Defines supported color formats;  <br/>
         Hash prefixed 6-digit hex codes, in the form of '#RRGGBB'. <br/>
         Two color vertical gradients, in the form of 'gradient(#RRGGBB,#RRGGBB)'. <br/>
 		Alpha is not supported, nor are 3-digit hex codes.
-
        </documentation>
      </annotation>
          <union>
@@ -142,15 +141,15 @@
    </simpleType>
    <element name="Presentation">
       <annotation>
-         <documentation>The top-level element that contains the presentation.</documentation>
+         <documentation>The top-level element that contains the presentation</documentation>
       </annotation>
       <complexType>
          <choice maxOccurs="unbounded">
             <element name="Meta" minOccurs="0" maxOccurs="unbounded">
                <annotation>
                   <documentation>
-                     Meta elements define key value pairs of meta infomation that are unlikely to be directly rendered.
-                     Such as author information and/or revision number.
+                     Meta elements define key-value pairs of meta information that are unlikely to be directly rendered,
+                     such as author information or revision number.
                   </documentation>
                </annotation>
                <complexType>
@@ -175,7 +174,7 @@
                            <choice maxOccurs="unbounded">
                               <element name="Format" minOccurs="0" maxOccurs="unbounded">
                                  <annotation>
-                                    <documentation>Formats the text within differently to the surrounding text</documentation>
+                                    <documentation>Formats the contained text differently to the surrounding text</documentation>
                                  </annotation>
                                  <complexType>
                                     <simpleContent>
