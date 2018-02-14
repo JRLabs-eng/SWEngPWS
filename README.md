@@ -4,6 +4,22 @@ Project Wide Specification (PWS)
 ⚠️➡️ **[VIEW HTML DOCUMENTATION HERE](//jackoro.github.io/SWEngPWS/)** ⬅️⚠️
 ****************************
 
+Authors
+-------
+
+(Alphabetical)
+
+- Marco Bolt
+- Samuel Broughton
+- Ben King
+- Jack Rookes
+- Lauren Tomasello
+- Amy Turner
+- Zak West
+
+Usage
+-----
+
 - See [`schema.xsd`](schema.xsd) to see the XML schema
 - See [`example.pws`](example.pws) for an example file
 
