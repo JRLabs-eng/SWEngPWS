@@ -1,5 +1,5 @@
-Project Wide Standards
-======================
+Project Wide Specification (PWS)
+================================
 
 - See [`schema.xsd`](schema.xsd) to see the XML schema
 - See [`sample.pws`](sample.pws) for an example file
