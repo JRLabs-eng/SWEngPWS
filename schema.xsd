@@ -12,16 +12,24 @@
       <annotation>
          <documentation>The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.</documentation>
       </annotation>
-      <attribute name="x" type="decimal" />
-      <attribute name="y" type="decimal" />
-      <attribute name="x2" type="decimal" />
-      <attribute name="y2" type="decimal" />
+      <attribute name="x" type="decimal">
+	  	<annotation><documentation>The x co-ordinate of the top left corner of the element</documentation></annotation>
+	  </attribute>
+      <attribute name="y" type="decimal">
+	  	<annotation><documentation>The y co-ordinate of the top left corner of the element</documentation></annotation>
+	  </attribute>
+      <attribute name="x2" type="decimal">
+	  	<annotation><documentation>The x co-ordinate of the bottom right corner of the element</documentation></annotation>
+	  </attribute>
+      <attribute name="y2" type="decimal">
+	  	<annotation><documentation>The y co-ordinate of the bottom right corner of the element</documentation></annotation>
+	  </attribute>
    </attributeGroup>
    <attributeGroup name="fonts">
       <annotation>
-         <documentation>All text formatting options (except color).</documentation>
+         <documentation>All text formatting options (except color). If these attributes are omitted on an element, it will inhert them from it's parent</documentation>
       </annotation>
-      <attribute name="font" type="string" />
+      <attribute name="font" type="string"/>
       <attribute name="italic" type="boolean" />
       <attribute name="bold" type="boolean" />
       <attribute name="textsize" type="int" />
@@ -35,10 +43,19 @@
       <attribute name="fill" type="pws:colorType" />
    </attributeGroup>
    <attributeGroup name="transitions">
+   	  <annotation>
+         <documentation>Timing controls for automatic animation/transitions of elements</documentation>
+      </annotation>
       <attribute name="duration" type="int" />
       <attribute name="start" type="pws:startType" />
    </attributeGroup>
    <simpleType name="startType">
+      <annotation>
+	     <documentation>
+		    Either an interger number of seconds specifying how long to wait until starting the transition,
+		    or the word "trigger" which specifys waiting for an event(such as a mouse click)
+		 </documentation>
+	  </annotation>
       <union>
          <simpleType>
             <restriction base="string">
@@ -53,6 +70,11 @@
       </union>
    </simpleType>
    <simpleType name="shapeType">
+      <annotation>
+	     <documentation>
+		    Defines all vector shapes that are supported
+		 </documentation>
+	  </annotation>
       <restriction base="string">
          <enumeration value="ellipse" />
          <enumeration value="rectangle" />
@@ -60,7 +82,15 @@
       </restriction>
    </simpleType>
    <simpleType name="colorType">
-      <union>
+      <annotation>
+	     <documentation>
+		    Defines supported color formats. Alpha is not supported nor are there digit hex codes
+			#RRGGBB
+			gradient(#RRGGBB,#RRGGBB)
+			gradient(#RRGGBB,#RRGGBB,linear)
+		 </documentation>
+	  </annotation>
+         <union>
          <simpleType>
             <restriction base="string">
                <pattern value="#[0-9A-Fa-f]{6}" />
@@ -85,18 +115,36 @@
       <complexType>
          <choice maxOccurs="unbounded">
             <element name="Meta" minOccurs="0" maxOccurs="unbounded">
+               <annotation>
+                  <documentation>
+				  Meta elements define key values pair of meta infomation that are unlikely to be dircectly rendered.
+				  Such as author infomation or revision number.
+                  </documentation>
+               </annotation>
                <complexType>
                   <attribute name="key" type="string" use="required" />
                   <attribute name="value" type="string" use="required" />
                </complexType>
             </element>
             <element name="Slide" minOccurs="1" maxOccurs="unbounded">
+			   <annotation>
+                  <documentation>
+				  Slide element defines a collection of elements which are shown on screen together.
+				  In the general case each slide is shown one by one.
+				  </documentation>
+               </annotation>
                <complexType>
                   <choice maxOccurs="unbounded">
                      <element name="Text" minOccurs="0" maxOccurs="unbounded">
+					    <annotation>
+                           <documentation>Rich Text element</documentation>
+                        </annotation>
                         <complexType mixed="true">
                            <choice maxOccurs="unbounded">
                               <element name="Format" minOccurs="0" maxOccurs="unbounded">
+							     <annotation>
+                                    <documentation>Formats the text within diffrently to the surounding text</documentation>
+                                 </annotation>
                                  <complexType>
                                     <simpleContent>
                                        <extension base="string">
@@ -106,7 +154,11 @@
                                     </simpleContent>
                                  </complexType>
                               </element>
-                              <element name="Br" minOccurs="0" maxOccurs="unbounded" />
+                              <element name="Br" minOccurs="0" maxOccurs="unbounded">
+							     <annotation>
+                                    <documentation>Adds a line break to the text</documentation>
+                                 </annotation>
+							  </element>
                            </choice>
                            <attributeGroup ref="pws:position" />
                            <attributeGroup ref="pws:fonts" />
@@ -115,6 +167,9 @@
                         </complexType>
                      </element>
                      <element name="Shape" minOccurs="0" maxOccurs="unbounded">
+					    <annotation>
+                           <documentation>Vector shape element</documentation>
+                        </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
                            <attributeGroup ref="pws:colors" />
@@ -123,18 +178,39 @@
                         </complexType>
                      </element>
                      <element name="Image" minOccurs="0" maxOccurs="unbounded">
+                        <annotation>
+                           <documentation>
+						   Bitmap Image element.
+						   JPEG images are supported.
+						   Other file formats may be supported, though this is not garenteed.
+						   </documentation>
+                        </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
                            <attribute name="path" type="string" />
                         </complexType>
                      </element>
                      <element name="Audio" minOccurs="0" maxOccurs="unbounded">
+					    <annotation>
+                           <documentation>
+						   Embeded audio file.
+						   WAV files are supported.
+						   Other file formats may be supported, though this is not garenteed.
+						   </documentation>
+                        </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
                            <attribute name="path" type="string" />
                         </complexType>
                      </element>
                      <element name="Video" minOccurs="0" maxOccurs="unbounded">
+					    <annotation>
+                           <documentation>
+						   Embeded video file.
+						   MP4 files are supported.
+						   Other file formats may be supported, though this is not garenteed.
+						   </documentation>
+                        </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
                            <attribute name="path" type="string" />
