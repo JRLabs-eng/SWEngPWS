@@ -5,11 +5,11 @@ Project Wide Specification (PWS)
 ****************************
 
 - See [`schema.xsd`](schema.xsd) to see the XML schema
-- See [`sample.pws`](sample.pws) for an example file
+- See [`example.pws`](example.pws) for an example file
 
 You can validate the sample (or any other PWS file) against the schema using [`xmllint`](//xmlsoft.org/xmllint.html):
 
-	xmllint --noout --schema schema.xsd sample.pws
+	xmllint --noout --schema schema.xsd example.pws
 
 Or online at [xmlvalidation.com](//www.xmlvalidation.com).
 
