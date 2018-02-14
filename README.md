@@ -9,6 +9,7 @@ You can validate the sample (or any other PWS file) against the schema using [`x
 	xmllint --noout --schema schema.xsd sample.pws
 
 Or online at https://www.xmlvalidation.com/
+
 Description
 -----------
 
