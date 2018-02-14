@@ -37,7 +37,7 @@
    </attributeGroup>
    <attributeGroup name="colors">
       <annotation>
-         <documentation>Defines the fill color and the foreground/stroke/text color.</documentation>
+         <documentation>Defines the fill colour and the foreground/stroke/text colour.</documentation>
       </annotation>
       <attribute name="color" type="pws:colorType" />
       <attribute name="fill" type="pws:colorType" />
@@ -53,7 +53,7 @@
       <annotation>
         <documentation>
           Either an interger number of seconds specifying how long to wait until starting the transition,
-          or the word "trigger" which specifys waiting for an event(such as a mouse click)
+          or the word "trigger" which specifies waiting for an event(such as a mouse click).
        </documentation>
      </annotation>
       <union>
@@ -72,7 +72,7 @@
    <simpleType name="shapeType">
       <annotation>
         <documentation>
-          Defines all vector shapes that are supported
+          Defines all vector shapes that are supported.
        </documentation>
      </annotation>
       <restriction base="string">
@@ -84,7 +84,7 @@
    <simpleType name="colorType">
       <annotation>
         <documentation>
-          Defines supported color formats. Alpha is not supported nor are there digit hex codes
+          Defines supported colour formats. Alpha is not supported nor are there digit hex codes
          #RRGGBB
          gradient(#RRGGBB,#RRGGBB)
        </documentation>
@@ -111,8 +111,8 @@
             <element name="Meta" minOccurs="0" maxOccurs="unbounded">
                <annotation>
                   <documentation>
-                     Meta elements define key values pair of meta infomation that are unlikely to be dircectly rendered.
-                     Such as author infomation or revision number.
+                     Meta elements define key value pairs of meta infomation that are unlikely to be directly rendered.
+                     Such as author information and/or revision number.
                   </documentation>
                </annotation>
                <complexType>
@@ -137,7 +137,7 @@
                            <choice maxOccurs="unbounded">
                               <element name="Format" minOccurs="0" maxOccurs="unbounded">
                                  <annotation>
-                                    <documentation>Formats the text within diffrently to the surounding text</documentation>
+                                    <documentation>Formats the text within differently to the surrounding text</documentation>
                                  </annotation>
                                  <complexType>
                                     <simpleContent>
@@ -176,7 +176,7 @@
                            <documentation>
                            Bitmap Image element.
                            JPEG images are supported.
-                           Other file formats may be supported, though this is not garenteed.
+                           Other file formats may be supported, though this is not guaranteed.
                            </documentation>
                         </annotation>
                         <complexType>
@@ -187,9 +187,9 @@
                      <element name="Audio" minOccurs="0" maxOccurs="unbounded">
                         <annotation>
                            <documentation>
-                           Embeded audio file.
+                           Embedded audio file.
                            WAV files are supported.
-                           Other file formats may be supported, though this is not garenteed.
+                           Other file formats may be supported, though this is not guaranteed.
                            </documentation>
                         </annotation>
                         <complexType>
@@ -202,7 +202,7 @@
                            <documentation>
                            Embeded video file.
                            MP4 files are supported.
-                           Other file formats may be supported, though this is not garenteed.
+                           Other file formats may be supported, though this is not guaranteed.
                            </documentation>
                         </annotation>
                         <complexType>
