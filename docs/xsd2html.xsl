@@ -97,6 +97,12 @@
       </xsl:choose>
    </xsl:template>
 
+   <xsl:template match="xs:schema/xs:annotation/xs:documentation">
+      <p>
+         <xsl:apply-templates/>
+      </p>
+   </xsl:template>
+
    <xsl:template match="xs:schema/xs:annotation/xs:appinfo">
       <xsl:choose>
          <xsl:when test="count(.. |
@@ -158,6 +164,40 @@
             <p>Empty</p>
          </xsl:otherwise>
       </xsl:choose>
+      </section>
+   </xsl:template>
+
+   <xsl:template match="xs:attributeGroup[@name]">
+      <section>
+         <h2 id="attribute-group-{@name}">
+            <xsl:text>Attribute Group: </xsl:text>
+            <code><xsl:value-of select="@name"/></code>
+         </h2>
+         <xsl:apply-templates select="xs:annotation"/>
+         <xsl:if test="descendant::xs:attribute">
+            <table border="1">
+               <caption>Attributes</caption>
+               <xsl:apply-templates select="xs:attribute"
+                  mode="attributes"/>
+            </table>
+         </xsl:if>
+      </section>
+   </xsl:template>
+
+   <xsl:template match="xs:simpleType[@name]">
+      <section>
+         <h2 id="simple-type-{@name}">
+            <xsl:text>Simple Type: </xsl:text>
+            <code><xsl:value-of select="@name"/></code>
+         
+         </h2>
+         <xsl:apply-templates select="xs:annotation"/>
+         <xsl:if test="descendant::xs:restriction">
+            <xsl:apply-templates select="xs:restriction" />
+         </xsl:if>
+         <xsl:if test="descendant::xs:union">
+            <xsl:apply-templates select="xs:union" />
+         </xsl:if>
       </section>
    </xsl:template>
 
@@ -225,12 +265,24 @@
       </ul>
    </xsl:template>
 
+   <xsl:template match="xs:union">
+      <p>Union type</p>
+      <section><xsl:apply-templates select="xs:simpleType"/></section>
+   </xsl:template>
+
+   <xsl:template match="xs:pattern">
+      <p>Pattern: <code><xsl:value-of select="@value" /></code></p>
+   </xsl:template>
+
    <xsl:template match="xs:restriction">
       <p>
          <xsl:call-template name="simpleType">
             <xsl:with-param name="type" select="@base"/>
          </xsl:call-template>
       </p>
+      <xsl:if test="descendant::xs:pattern">
+         <xsl:apply-templates select="xs:pattern" />
+      </xsl:if>
       <xsl:if test="xs:enumeration">
          <p>
             <xsl:text>Enumeration:</xsl:text>
@@ -366,7 +418,20 @@
                <xsl:for-each select="/xs:schema/xs:attributeGroup">
                   <xsl:sort select="@name"/>
                   <li>
-                     <a href="#group-{@name}">
+                     <a href="#attribute-group-{@name}">
+                        <xsl:value-of select="@name"/>
+                     </a>
+                  </li>
+               </xsl:for-each>
+            </ul>
+         </xsl:if>
+         <xsl:if test="/xs:schema/xs:simpleType">
+            <h3>Types</h3>
+            <ul>
+               <xsl:for-each select="/xs:schema/xs:simpleType">
+                  <xsl:sort select="@name"/>
+                  <li>
+                     <a href="#simple-type-{@name}">
                         <xsl:value-of select="@name"/>
                      </a>
                   </li>

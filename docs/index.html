@@ -23,81 +23,169 @@
 </ul>
 <h3>Attribute Groups</h3>
 <ul>
-<li><a href="#group-colors">colors</a></li>
-<li><a href="#group-fonts">fonts</a></li>
-<li><a href="#group-position">position</a></li>
-<li><a href="#group-transitions">transitions</a></li>
+<li><a href="#attribute-group-colors">colors</a></li>
+<li><a href="#attribute-group-fonts">fonts</a></li>
+<li><a href="#attribute-group-position">position</a></li>
+<li><a href="#attribute-group-transitions">transitions</a></li>
+</ul>
+<h3>Types</h3>
+<ul>
+<li><a href="#simple-type-colorType">colorType</a></li>
+<li><a href="#simple-type-shapeType">shapeType</a></li>
+<li><a href="#simple-type-startType">startType</a></li>
 </ul></section>
-      
+      <p>
          Version 1.0.
 
          Actual specification evolution &amp; discussion takes place at //github.com/JackoRo/SWEngPWS where pull requests can be made.
-      
+      </p>
    
-   
-      
+   <section><h2 id="attribute-group-position">Attribute Group: <code>position</code>
+</h2>
          The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.
-      
-      
-      
-      
-      
-   
-   
-      
+      <table border="1">
+<caption>Attributes</caption>
+<tr valign="baseline">
+<th align="left" rowspan="2">x</th>
+<td>Simple type <a href="#simple-type-decimal">decimal</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">y</th>
+<td>Simple type <a href="#simple-type-decimal">decimal</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">x2</th>
+<td>Simple type <a href="#simple-type-decimal">decimal</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">y2</th>
+<td>Simple type <a href="#simple-type-decimal">decimal</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+</table></section>
+   <section><h2 id="attribute-group-fonts">Attribute Group: <code>fonts</code>
+</h2>
          All text formatting options (except color).
-      
-      
-      
-      
-      
-      
-   
-   
-      
+      <table border="1">
+<caption>Attributes</caption>
+<tr valign="baseline">
+<th align="left" rowspan="2">font</th>
+<td>Simple type <a href="#simple-type-string">string</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">italic</th>
+<td>Simple type <a href="#simple-type-boolean">boolean</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">bold</th>
+<td>Simple type <a href="#simple-type-boolean">boolean</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">textsize</th>
+<td>Simple type <a href="#simple-type-int">int</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">underline</th>
+<td>Simple type <a href="#simple-type-boolean">boolean</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+</table></section>
+   <section><h2 id="attribute-group-colors">Attribute Group: <code>colors</code>
+</h2>
          Defines the fill color and the foreground/stroke/text color.
-      
-      
-      
-   
-   
-      
-      
-   
-   
-      
-         
+      <table border="1">
+<caption>Attributes</caption>
+<tr valign="baseline">
+<th align="left" rowspan="2">color</th>
+<td>Simple type <a href="#simple-type-pws:colorType">pws:colorType</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">fill</th>
+<td>Simple type <a href="#simple-type-pws:colorType">pws:colorType</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+</table></section>
+   <section><h2 id="attribute-group-transitions">Attribute Group: <code>transitions</code>
+</h2>
+<table border="1">
+<caption>Attributes</caption>
+<tr valign="baseline">
+<th align="left" rowspan="2">duration</th>
+<td>Simple type <a href="#simple-type-int">int</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+<tr valign="baseline">
+<th align="left" rowspan="2">start</th>
+<td>Simple type <a href="#simple-type-pws:startType">pws:startType</a>
+</td>
+<td>optional</td>
+</tr>
+<tr valign="baseline"><td colspan="2"></td></tr>
+</table></section>
+   <section><h2 id="simple-type-startType">Simple Type: <code>startType</code>
+</h2>
+<p>Union type</p>
+<section>
             <p>Simple type <a href="#simple-type-string">string</a></p>
 <p>Enumeration:</p>
 <ul><li><code>trigger</code></li></ul>
          
-         
             <p>Simple type <a href="#simple-type-integer">integer</a></p>
-         
-      
-   
-   
-      <p>Simple type <a href="#simple-type-string">string</a></p>
+         </section></section>
+   <section><h2 id="simple-type-shapeType">Simple Type: <code>shapeType</code>
+</h2>
+<p>Simple type <a href="#simple-type-string">string</a></p>
 <p>Enumeration:</p>
 <ul>
 <li><code>ellipse</code></li>
 <li><code>rectangle</code></li>
 <li><code>line</code></li>
-</ul>
-   
-   
-      
+</ul></section>
+   <section><h2 id="simple-type-colorType">Simple Type: <code>colorType</code>
+</h2>
+<p>Union type</p>
+<section>
+            <p>Simple type <a href="#simple-type-string">string</a></p>
+<p>Pattern: <code>#[0-9A-Fa-f]{6}</code></p>
          
             <p>Simple type <a href="#simple-type-string">string</a></p>
-         
-         
-            <p>Simple type <a href="#simple-type-string">string</a></p>
-         
+<p>Pattern: <code>gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6}\)</code></p>
          
             <p>Simple type <a href="#simple-type-string">string</a></p>
-         
-      
-   
+<p>Pattern: <code>gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6},linear\)</code></p>
+         </section></section>
    <section><h2 id="element-type-Presentation">Element: <code>&lt;Presentation&gt;</code>
 </h2>
          The top-level element that contains the presentation.

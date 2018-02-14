@@ -3,6 +3,7 @@ body {
    color: black;
    font: normal 14px -apple-system, 'Myriad Pro', 'Helvetica', sans-serif;
    padding: 20px;
+   line-height: 1.3;
 }
 
 section {
@@ -21,6 +22,10 @@ section section section {
 
 section section section section {
    background: #ddd;
+}
+
+p {
+   max-width: 800px;
 }
 
 h1 {
