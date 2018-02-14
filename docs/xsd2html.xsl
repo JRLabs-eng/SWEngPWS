@@ -89,10 +89,10 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="xs:schema/xs:annotation/xs:documentation">
+  <xsl:template match="xs:schema/xs:annotation/xs:appinfo">
     <xsl:choose>
       <xsl:when test="count(.. |
-                      ../../xs:annotation[xs:documentation][1]) = 1">
+                      ../../xs:annotation[xs:appinfo][1]) = 1">
         <h1>
           <xsl:apply-templates/>
         </h1>
@@ -239,15 +239,20 @@
       <head>
         <title>
           <xsl:value-of
-            select="xs:annotation[xs:documentation][1]/
-                    xs:documentation"/>
+            select="xs:annotation[xs:appinfo][1]/
+                    xs:appinfo"/>
         </title>
         <style>
-          body { background: white;
-                 color: black; }
-          h2   { border-top: black solid 1px;
-                 margin-top: 2em;
-                 padding-top: 1em; }
+           body {
+              background: white;
+              color: black;
+              font: normal 10px sans-serif;
+           }
+           h2 {
+              border-top: black solid 1px;
+              margin-top: 2em;
+              padding-top: 1em;
+           }
         </style>
       </head>
       <body>

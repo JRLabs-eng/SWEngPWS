@@ -1,6 +1,5 @@
 # uses xmlstarlet
-docs/index.html: schema.xsd docs/xsd2html.xsl
-	 make validate_schema
+docs/index.html: schema.xsd docs/xsd2html.xsl validate_schema
 	 xml tr docs/xsd2html.xsl schema.xsd >| docs/index.html
 
 # uses xmllint from libxml2

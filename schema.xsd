@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pws="pws" version="1.0" elementFormDefault="qualified" targetNamespace="pws">
+   <annotation>
+      <appinfo>Project Wide Specification (PWS)</appinfo>
+      <documentation>
+         Version 1.0.
+
+         Actual specification evolution &amp; discussion takes place at //github.com/JackoRo/SWEngPWS where pull requests can be made.
+      </documentation>
+   </annotation>
    <attributeGroup name="position">
       <annotation>
          <documentation>The position and size (offset) of an element. The width and height of an element is defined as the difference between the (x, y) and (x2, y2) coordinates.</documentation>
