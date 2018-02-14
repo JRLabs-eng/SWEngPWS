@@ -87,7 +87,6 @@
           Defines supported color formats. Alpha is not supported nor are there digit hex codes
          #RRGGBB
          gradient(#RRGGBB,#RRGGBB)
-         gradient(#RRGGBB,#RRGGBB,linear)
        </documentation>
      </annotation>
          <union>
@@ -99,11 +98,6 @@
          <simpleType>
             <restriction base="string">
                <pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6}\)" />
-            </restriction>
-         </simpleType>
-         <simpleType>
-            <restriction base="string">
-               <pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6},linear\)" />
             </restriction>
          </simpleType>
       </union>
