@@ -147,11 +147,11 @@
 </table></section>
    <section><h2 id="simple-type-pws:startType">Simple Type: <code>startType</code>
 </h2>
-	     
-		    Either an interger number of seconds specifying how long to wait until starting the transition,
-		    or the word "trigger" which specifys waiting for an event(such as a mouse click)
-		 
-	  <section>
+        
+          Either an interger number of seconds specifying how long to wait until starting the transition,
+          or the word "trigger" which specifys waiting for an event(such as a mouse click)
+       
+     <section>
             <p>Built-in type string
             (
             <code>trigger</code>
@@ -163,23 +163,23 @@
          </section></section>
    <section><h2 id="simple-type-pws:shapeType">Simple Type: <code>shapeType</code>
 </h2>
-	     
-		    Defines all vector shapes that are supported
-		 
-	  <p>Built-in type string
+        
+          Defines all vector shapes that are supported
+       
+     <p>Built-in type string
             (
             <code>ellipse</code>,<code>rectangle</code>,<code>line</code>
             )
          </p></section>
    <section><h2 id="simple-type-pws:colorType">Simple Type: <code>colorType</code>
 </h2>
-	     
-		    Defines supported color formats. Alpha is not supported nor are there digit hex codes
-			#RRGGBB
-			gradient(#RRGGBB,#RRGGBB)
-			gradient(#RRGGBB,#RRGGBB,linear)
-		 
-	  <section>
+        
+          Defines supported color formats. Alpha is not supported nor are there digit hex codes
+         #RRGGBB
+         gradient(#RRGGBB,#RRGGBB)
+         gradient(#RRGGBB,#RRGGBB,linear)
+       
+     <section>
             <p>Built-in type string</p>
 <p>Pattern: <code>#[0-9A-Fa-f]{6}</code></p>
          </section><h3>OR</h3>
@@ -206,8 +206,8 @@
             <section><h2 id="element-type-Meta">Element: <code>&lt;Meta&gt;</code>
 </h2>
                   
-				  Meta elements define key values pair of meta infomation that are unlikely to be dircectly rendered.
-				  Such as author infomation or revision number.
+                     Meta elements define key values pair of meta infomation that are unlikely to be dircectly rendered.
+                     Such as author infomation or revision number.
                   
                <table border="1">
 <caption>Attributes</caption>
@@ -229,9 +229,9 @@
             <section><h2 id="element-type-Slide">Element: <code>&lt;Slide&gt;</code>
 </h2>
                   
-				  Slide element defines a collection of elements which are shown on screen together.
-				  In the general case each slide is shown one by one.
-				  
+                     Slide element defines a collection of elements which are shown on screen together.
+                     In the general case each slide is shown one by one.
+                  
                <table border="1"><caption>Attributes</caption></table>
 <table border="1">
 <caption>Attribute Groups</caption>
@@ -292,7 +292,7 @@
 <th align="left" rowspan="2">type</th>
 <td>Simple type <a href="#simple-type-pws:shapeType">shapeType</a>
 </td>
-<td>optional</td>
+<td>required</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 <tr valign="baseline">
@@ -312,16 +312,16 @@
                      <section><h2 id="element-type-Image">Element: <code>&lt;Image&gt;</code>
 </h2>
                            
-						   Bitmap Image element.
-						   JPEG images are supported.
-						   Other file formats may be supported, though this is not garenteed.
-						   
+                           Bitmap Image element.
+                           JPEG images are supported.
+                           Other file formats may be supported, though this is not garenteed.
+                           
                         <table border="1">
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">path</th>
 <td>Built-in type string</td>
-<td>optional</td>
+<td>required</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 </table>
@@ -334,16 +334,16 @@
                      <section><h2 id="element-type-Audio">Element: <code>&lt;Audio&gt;</code>
 </h2>
                            
-						   Embeded audio file.
-						   WAV files are supported.
-						   Other file formats may be supported, though this is not garenteed.
-						   
+                           Embeded audio file.
+                           WAV files are supported.
+                           Other file formats may be supported, though this is not garenteed.
+                           
                         <table border="1">
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">path</th>
 <td>Built-in type string</td>
-<td>optional</td>
+<td>required</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 </table>
@@ -356,16 +356,16 @@
                      <section><h2 id="element-type-Video">Element: <code>&lt;Video&gt;</code>
 </h2>
                            
-						   Embeded video file.
-						   MP4 files are supported.
-						   Other file formats may be supported, though this is not garenteed.
-						   
+                           Embeded video file.
+                           MP4 files are supported.
+                           Other file formats may be supported, though this is not garenteed.
+                           
                         <table border="1">
 <caption>Attributes</caption>
 <tr valign="baseline">
 <th align="left" rowspan="2">path</th>
 <td>Built-in type string</td>
-<td>optional</td>
+<td>required</td>
 </tr>
 <tr valign="baseline"><td colspan="2"></td></tr>
 </table>

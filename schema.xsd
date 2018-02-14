@@ -173,7 +173,7 @@
                         <complexType>
                            <attributeGroup ref="pws:position" />
                            <attributeGroup ref="pws:colors" />
-                           <attribute name="type" type="pws:shapeType" />
+                           <attribute name="type" type="pws:shapeType" use="required"/>
                            <attribute name="stroke" type="decimal" />
                         </complexType>
                      </element>
@@ -187,7 +187,7 @@
                         </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
-                           <attribute name="path" type="string" />
+                           <attribute name="path" type="string" use="required"/>
                         </complexType>
                      </element>
                      <element name="Audio" minOccurs="0" maxOccurs="unbounded">
@@ -200,7 +200,7 @@
                         </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
-                           <attribute name="path" type="string" />
+                           <attribute name="path" type="string" use="required"/>
                         </complexType>
                      </element>
                      <element name="Video" minOccurs="0" maxOccurs="unbounded">
@@ -213,7 +213,7 @@
                         </annotation>
                         <complexType>
                            <attributeGroup ref="pws:position" />
-                           <attribute name="path" type="string" />
+                           <attribute name="path" type="string" use="required"/>
                         </complexType>
                      </element>
                   </choice>
