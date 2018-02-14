@@ -1,142 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" version="1.0">
-    <element name="Presentation">
-        <complexType>
-			<choice maxOccurs="unbounded">
+<xs:schema
+	xmlns:pws="http://SWEng.org/pws"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://SWEng.org/pws"
+>
 
-				<element name="Meta" minOccurs="0" maxOccurs="unbounded">
-					<complexType>
-						<attribute name="key" type="string"  use="required"/>
-						<attribute name="value" type="string"  use="required"/>
-					</complexType>
-				</element>
+	<xs:attributeGroup name="position">
+      <xs:attribute name="x" type="xs:int" />
+      <xs:attribute name="y" type="xs:int" />
+      <xs:attribute name="x2" type="xs:int" />
+      <xs:attribute name="y2" type="xs:int" />
+   </xs:attributeGroup>
+   <xs:attributeGroup name="fonts">
+      <xs:attribute name="font" type="xs:string" />
+      <xs:attribute name="italic" type="xs:boolean" />
+      <xs:attribute name="bold" type="xs:boolean" />
+      <xs:attribute name="textsize" type="xs:int" />
+      <xs:attribute name="underline" type="xs:boolean" />
+   </xs:attributeGroup>
+   <xs:attributeGroup name="colors">
+      <xs:attribute name="color" type="pws:colorType" />
+      <xs:attribute name="fill" type="pws:colorType" />
+   </xs:attributeGroup>
+   <xs:attributeGroup name="transitions">
+      <xs:attribute name="duration" type="xs:int" />
+      <xs:attribute name="start" type="pws:startType" />
+   </xs:attributeGroup>
+   <xs:simpleType name="startType">
+      <xs:union>
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:enumeration value="trigger" />
+            </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType>
+            <xs:restriction base="xs:integer">
+               <xs:minInclusive value="1" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:union>
+   </xs:simpleType>
+   <xs:simpleType name="shapeType">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="ellipse" />
+         <xs:enumeration value="rectangle" />
+         <xs:enumeration value="line" />
+      </xs:restriction>
+   </xs:simpleType>
 
-				<element name="Slide" minOccurs="1" maxOccurs="unbounded">
-					<complexType>
-						<choice maxOccurs="unbounded">
-							<element name="Text" minOccurs="0" maxOccurs="unbounded">
-								<complexType  mixed="true">
-									<choice minOccurs="0" maxOccurs="unbounded">
-										<element name="Format" minOccurs="0" maxOccurs="unbounded">
-											<complexType mixed="true">
-												 <simpleContent>
-													<extension base="string">
-														<attribute name="id" type="string"/>
-														<attribute name="italic" type="boolean"/>
-														<attribute name="bold" type="boolean"/>
-														<attribute name="underline" type="boolean"/>
-														<attribute name="textsize" type="int"/>
-														<attribute name="textcolor" type="string"/>
-														<attribute name="font" type="string"/>
-														<attribute name="duration" type="int"/>
-														<attribute name="start" type="start_type"/>
-													</extension>
-												</simpleContent>
-											</complexType>
-										</element>
-										<element name="br" minOccurs="0" maxOccurs="unbounded"/>
-									</choice>
-									<attribute name="id" type="string"/>
-									<attribute name="italic" type="boolean"/>
-									<attribute name="bold" type="boolean"/>
-									<attribute name="underline" type="boolean"/>
-									<attribute name="textsize" type="int"/>
-									<attribute name="textcolor" type="string"/>
-									<attribute name="font" type="string"/>
-									<attribute name="duration" type="int"/>
-									<attribute name="start" type="start_type"/>
-								</complexType>
-							</element>
-							<element name="Shape" minOccurs="0" maxOccurs="unbounded">
-								<complexType>
-									<attribute name="type" type="string">
-										<simpleType>
-											<restriction base="string">
-												<enumeration value="eclipse"/>
-												<enumeration value="square"/>
-											</restriction>
-										</simpleType>
-									</attribute>
-									<attribute name="x" type="int"/>
-									<attribute name="y" type="int"/>
-									<attribute name="x2" type="int"/>
-									<attribute name="y2" type="int"/>
-									<attribute name="fill" type="string"/>
-									<attribute name="duration" type="int"/>
-									<attribute name="start" type="start_type"/>
-								</complexType>
-							</element>
-							<element name="Image" minOccurs="0" maxOccurs="unbounded">
-								<complexType>
-									<attribute name="path" type="string"/>
-									<attribute name="x" type="int"/>
-									<attribute name="y" type="int"/>
-									<attribute name="width" type="int"/>
-									<attribute name="height" type="int"/>
-									<attribute name="duration" type="int"/>
-									<attribute name="start" type="start_type"/>
-								</complexType>
-							</element>
-							<element name="Audio" minOccurs="0" maxOccurs="unbounded">
-								<complexType>
-									<attribute name="path" type="string"/>
-									<attribute name="x" type="int"/>
-									<attribute name="y" type="int"/>
-									<attribute name="width" type="int"/>
-									<attribute name="height" type="int"/>
-									<attribute name="duration" type="int"/>
-									<attribute name="start" type="start_type"/>
-								</complexType>
-							</element>
-							<element name="Video" minOccurs="0" maxOccurs="unbounded">
-								<complexType>
-									<attribute name="path" type="string"/>
-									<attribute name="x" type="int"/>
-									<attribute name="y" type="int"/>
-									<attribute name="width" type="int"/>
-									<attribute name="height" type="int"/>
-									<attribute name="duration" type="int"/>
-									<attribute name="start" type="start_type"/>
-								</complexType>
-							</element>
-						</choice>
+   <xs:simpleType name="colorType">
+		<xs:union>
+		    <xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="#[0-9A-Fa-f]{6}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		    <xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6}\)"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6},linear\)"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+   </xs:simpleType>
 
-						<attribute name="italic" type="boolean"/>
-						<attribute name="bold" type="boolean"/>
-						<attribute name="underline" type="boolean"/>
-						<attribute name="textsize" type="int"/>
-						<attribute name="textcolor" type="string"/>
-						<attribute name="font" type="string"/>
-
-						<attribute name="duration" type="int"/>
-
-					</complexType>
-				</element>
-			</choice>
-
-			<attribute name="italic" type="boolean"/>
-			<attribute name="bold" type="boolean"/>
-			<attribute name="underline" type="boolean"/>
-			<attribute name="textsize" type="int"/>
-			<attribute name="textcolor" type="string"/>
-			<attribute name="font" type="string"/>
-        </complexType>
-    </element>
-
-	<simpleType name="start_type">
-		<union>
-			<simpleType>
-				<restriction base='xs:string'>
-					<enumeration value="trigger"/>
-				</restriction>
-			</simpleType>
-			<simpleType>
-				<restriction base='xs:integer'>
-					<minInclusive value="1"/>
-				</restriction>
-			</simpleType>
-		</union>
-	</simpleType>
-
-</schema>
-
+   <xs:element name="Presentation">
+      <xs:annotation>
+         <xs:documentation>The top-level element that contains the presentation.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:choice maxOccurs="unbounded">
+            <xs:element name="Meta" minOccurs="0" maxOccurs="unbounded">
+               <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="value" type="xs:string" use="required" />
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="Slide" minOccurs="1" maxOccurs="unbounded">
+               <xs:complexType>
+                  <xs:choice maxOccurs="unbounded">
+                     <xs:element name="Text" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType  mixed="true">
+						   <xs:choice  maxOccurs="unbounded">
+								<xs:element name="Format"  minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+										    <xs:extension base="xs:string">
+												<xs:attributeGroup ref="pws:fonts" />
+												<xs:attributeGroup ref="pws:colors" />
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Br"  minOccurs="0" maxOccurs="unbounded"/>
+							</xs:choice>
+							<xs:attributeGroup ref="pws:position" />
+                            <xs:attributeGroup ref="pws:fonts" />
+                            <xs:attributeGroup ref="pws:colors" />
+                            <xs:attributeGroup ref="pws:transitions" />
+						</xs:complexType>
+                     </xs:element>
+                     <xs:element name="Shape" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                           <xs:attributeGroup ref="pws:position" />
+                           <xs:attributeGroup ref="pws:colors" />
+                           <xs:attribute name="type" type="pws:shapeType" />
+                           <xs:attribute name="stroke" type="xs:int" />
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="Image" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                           <xs:attributeGroup ref="pws:position" />
+                           <xs:attribute name="path" type="xs:string" />
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="Audio" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                           <xs:attributeGroup ref="pws:position" />
+                           <xs:attribute name="path" type="xs:string" />
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="Video" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                           <xs:attributeGroup ref="pws:position" />
+                           <xs:attribute name="path" type="xs:string" />
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:choice>
+				  <xs:attributeGroup ref="pws:fonts" />
+                  <xs:attributeGroup ref="pws:colors" />
+                  <xs:attributeGroup ref="pws:transitions" />
+               </xs:complexType>
+            </xs:element>
+         </xs:choice>
+		 <xs:attributeGroup ref="pws:fonts" />
+         <xs:attributeGroup ref="pws:colors" />
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
