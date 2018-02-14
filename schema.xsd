@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema
-	version="1.0"
-	xmlns:pws="pws"
-	xmlns="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified"
-	targetNamespace="pws"
->
-
-	<attributeGroup name="position">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pws="pws" version="1.0" elementFormDefault="qualified" targetNamespace="pws">
+   <attributeGroup name="position">
       <attribute name="x" type="int" />
       <attribute name="y" type="int" />
       <attribute name="x2" type="int" />
@@ -49,27 +42,25 @@
          <enumeration value="line" />
       </restriction>
    </simpleType>
-
    <simpleType name="colorType">
-		<union>
-		    <simpleType>
-				<restriction base="string">
-					<pattern value="#[0-9A-Fa-f]{6}"/>
-				</restriction>
-			</simpleType>
-		    <simpleType>
-				<restriction base="string">
-					<pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6}\)"/>
-				</restriction>
-			</simpleType>
-			<simpleType>
-				<restriction base="string">
-					<pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6},linear\)"/>
-				</restriction>
-			</simpleType>
-		</union>
+      <union>
+         <simpleType>
+            <restriction base="string">
+               <pattern value="#[0-9A-Fa-f]{6}" />
+            </restriction>
+         </simpleType>
+         <simpleType>
+            <restriction base="string">
+               <pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6}\)" />
+            </restriction>
+         </simpleType>
+         <simpleType>
+            <restriction base="string">
+               <pattern value="gradient\(#[0-9A-Fa-f]{6},#[0-9A-Fa-f]{6},linear\)" />
+            </restriction>
+         </simpleType>
+      </union>
    </simpleType>
-
    <element name="Presentation">
       <annotation>
          <documentation>The top-level element that contains the presentation.</documentation>
@@ -86,25 +77,25 @@
                <complexType>
                   <choice maxOccurs="unbounded">
                      <element name="Text" minOccurs="0" maxOccurs="unbounded">
-                        <complexType  mixed="true">
-						   <choice  maxOccurs="unbounded">
-								<element name="Format"  minOccurs="0" maxOccurs="unbounded">
-									<complexType>
-										<simpleContent>
-										    <extension base="string">
-												<attributeGroup ref="pws:fonts" />
-												<attributeGroup ref="pws:colors" />
-											</extension>
-										</simpleContent>
-									</complexType>
-								</element>
-								<element name="Br"  minOccurs="0" maxOccurs="unbounded"/>
-							</choice>
-							<attributeGroup ref="pws:position" />
-                            <attributeGroup ref="pws:fonts" />
-                            <attributeGroup ref="pws:colors" />
-                            <attributeGroup ref="pws:transitions" />
-						</complexType>
+                        <complexType mixed="true">
+                           <choice maxOccurs="unbounded">
+                              <element name="Format" minOccurs="0" maxOccurs="unbounded">
+                                 <complexType>
+                                    <simpleContent>
+                                       <extension base="string">
+                                          <attributeGroup ref="pws:fonts" />
+                                          <attributeGroup ref="pws:colors" />
+                                       </extension>
+                                    </simpleContent>
+                                 </complexType>
+                              </element>
+                              <element name="Br" minOccurs="0" maxOccurs="unbounded" />
+                           </choice>
+                           <attributeGroup ref="pws:position" />
+                           <attributeGroup ref="pws:fonts" />
+                           <attributeGroup ref="pws:colors" />
+                           <attributeGroup ref="pws:transitions" />
+                        </complexType>
                      </element>
                      <element name="Shape" minOccurs="0" maxOccurs="unbounded">
                         <complexType>
@@ -133,13 +124,13 @@
                         </complexType>
                      </element>
                   </choice>
-				  <attributeGroup ref="pws:fonts" />
+                  <attributeGroup ref="pws:fonts" />
                   <attributeGroup ref="pws:colors" />
                   <attributeGroup ref="pws:transitions" />
                </complexType>
             </element>
          </choice>
-		 <attributeGroup ref="pws:fonts" />
+         <attributeGroup ref="pws:fonts" />
          <attributeGroup ref="pws:colors" />
       </complexType>
    </element>

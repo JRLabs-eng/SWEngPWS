@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Presentation
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="pws schema.xsd"
-	xmlns="pws"
-	italic="false" bold="false" underline="false" textsize="12" color="#F341DE" font="Times New Roman">
+<Presentation xmlns="pws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="pws schema.xsd" italic="false" bold="false" underline="false" textsize="12" color="#F341DE" font="Times New Roman">
    <Meta key="author" value="Stuart Porter" />
    <Slide duration="12">
       <Text textsize="18" underline="true" font="Times New Roman">
@@ -19,7 +15,7 @@
          tags that change how it is
          <Format italic="true">rendered</Format>
          .
-         <Br/>
+         <Br />
          This slide is an example of that.
       </Text>
    </Slide>
