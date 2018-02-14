@@ -1,9 +1,14 @@
 Project Wide Standards
 ======================
 
-- See [`schema.xsd`](schema.xsd) to see the XML schema (currently just the example from Project Web-page)
+- See [`schema.xsd`](schema.xsd) to see the XML schema
 - See [`sample.pws`](sample.pws) for an example file
 
+You can validate the sample (or any other PWS file) against the schema using [`xmllint`](http://xmlsoft.org/xmllint.html):
+
+	xmllint --noout --schema schema.xsd sample.pws
+
+Or online at https://www.xmlvalidation.com/
 Description
 -----------
 

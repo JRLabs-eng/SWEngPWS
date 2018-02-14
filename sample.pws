@@ -2,8 +2,8 @@
 <pws:Presentation
 	xmlns="http://www.w3.org"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://SWEng.org/pws schema.xsd"
-	xmlns:pws="http://SWEng.org/pws"
+    xsi:schemaLocation="pws schema.xsd"
+	xmlns:pws="pws"
 	italic="false" bold="false" underline="false" textsize="12" color="#F341DE" font="Times New Roman">
    <pws:Meta key="author" value="Stuart Porter" />
    <pws:Slide duration="12">
@@ -11,7 +11,7 @@
          This is the schema of the
          <pws:Format bold="true" color="#F341DE">PWS</pws:Format>
          file fromat agreed between
-         <pws:Format bold="true" color="#F341DE">SWEng</pws:Format>
+         <pws:Format bold="true" color="#F314DE">SWEng</pws:Format>
          groups.
       </pws:Text>
       <pws:Text>
